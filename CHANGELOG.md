@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-06-01
+
+### Other
+- Update .koru/event-store.jsonl
+- Update .koru/events/observability.dsl.log
+- Update .koru/events/observability.jsonl
+- Update .koru/project.json
+- Update .planfile/.koru/autonomous-state.json
+- Update .planfile/.koru/autonomy-telemetry.json
+- Update .planfile/.koru/command_catalogs/windsurf-0.2.0.json
+- Update .planfile/.koru/event-store.jsonl
+- Update .planfile/.koru/integration-actions.jsonl
+- Update .planfile/.koru/nfo-events.jsonl
+
 ## [0.0.1] - 2026-06-01
 
 ### Docs

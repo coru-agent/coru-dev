@@ -4,7 +4,7 @@
     "scan_after_idle_runs": 0,
     "scan_after_idle_tickets_applied": 0
   },
-  "cycle": 3,
+  "cycle": 5,
   "knobs": {
     "autopilot_skip_drive_idle_streak": 0,
     "scan_after_idle_min_interval_seconds": 60.0,
@@ -16,26 +16,26 @@
       "control": {
         "can_confirm_submit": true,
         "family": "ide_control",
-        "interface_id": "plugin_socket_vscode_family",
+        "interface_id": "windsurf_native_send",
         "operator_recovery": [
           "reload_window",
           "reconnect_plugin"
         ],
-        "transport": "unix_socket_ndjson",
-        "verification_mode": "strict_ack",
-        "write_mode": "plugin_drive"
+        "transport": "ide_command_registry",
+        "verification_mode": "plugin_ack",
+        "write_mode": "native_send_command"
       },
-      "decision_key": "os=wayland|ide=vscode|llm=ide_chat|control=plugin_socket_vscode_family|verify=strict_ack",
+      "decision_key": "os=wayland|ide=windsurf|llm=ide_chat|control=windsurf_native_send|verify=plugin_ack",
       "ide": {
-        "config_path": "/home/tom/.config/Code/User/settings.json",
-        "extensions_metadata_path": "/home/tom/.vscode/extensions/extensions.json",
-        "id": "vscode",
+        "config_path": "/home/tom/.config/Windsurf/User/settings.json",
+        "extensions_metadata_path": "/home/tom/.windsurf/extensions/extensions.json",
+        "id": "windsurf",
         "keyboard_fallback_default": false,
-        "label": "VS Code",
+        "label": "Windsurf",
         "plugin_supported": true,
-        "strict_plugin_ack_required": true,
+        "strict_plugin_ack_required": false,
         "submit_key": "Return",
-        "trusted_publisher_required": true
+        "trusted_publisher_required": false
       },
       "llm": {
         "model": null,
@@ -59,16 +59,16 @@
   "recent_decisions": [
     {
       "action": "submit_unverified",
-      "at": "2026-06-01T19:25:18+00:00",
+      "at": "2026-06-01T20:38:38+00:00",
       "blocked_by": "failed",
-      "cycle": 3,
+      "cycle": 5,
       "decided": "drive_failed",
       "evidence": "blocked_by=failed, diagnostics=skipped, wup=skipped",
       "next_step": "retry next cycle (cached winner discarded)",
-      "observed": "queue=waiting_input ticket=PLF-001 streak=2",
+      "observed": "queue=waiting_input ticket=PLF-001 streak=4",
       "skip_because": "",
       "skip_code": "failed"
     }
   ],
-  "updated_at": "2026-06-01T19:25:18.098780+00:00"
+  "updated_at": "2026-06-01T20:38:38.206148+00:00"
 }
