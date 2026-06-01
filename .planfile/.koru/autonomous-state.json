@@ -1,0 +1,69 @@
+{
+  "cycle": 3,
+  "saved_at": 1780341918.0997689,
+  "queue_status": "waiting_input",
+  "waiting_ticket": "PLF-001",
+  "state": {
+    "previous_signature": "waiting_input:PLF-001",
+    "stagnation_streak": 2,
+    "scan_clean_streak": 0,
+    "scan_last_head": "2e2b7ecf339f99a39e22100ed3a7577fb86c15bb",
+    "wup_seen_events": 0,
+    "autopilot_events": [
+      {
+        "ts": 1780341813.8642955,
+        "type": "chat.opened",
+        "ide": "vscode",
+        "chat": "default",
+        "ok": true,
+        "reason": "connect",
+        "command": "agentSessions.filter.toggleExclude:openai-codex.agentsessionsviewerfiltersubmenu+workbench.action.chat.focusInput",
+        "operation_trace": [
+          {
+            "op": "focus_open",
+            "route": "plugin",
+            "ok": true,
+            "detail": {
+              "ide": "vscode",
+              "reason": "connect"
+            }
+          },
+          {
+            "op": "focus_input",
+            "route": "command",
+            "ok": true,
+            "command": "workbench.action.chat.focusInput"
+          },
+          {
+            "op": "focus_open",
+            "route": "command+input",
+            "ok": true,
+            "command": "agentSessions.filter.toggleExclude:openai-codex.agentsessionsviewerfiltersubmenu+workbench.action.chat.focusInput"
+          },
+          {
+            "op": "command:agentSessions.filter.toggleExclude:openai-codex.agentsessionsviewerfiltersubmenu+workbench.action.chat.focusInput",
+            "route": "command:agentSessions.filter.toggleExclude:openai-codex.agentsessionsviewerfiltersubmenu+workbench.action.chat.focusInput",
+            "ok": true
+          }
+        ]
+      }
+    ],
+    "last_driven_prompt": "Frontend: wydajno\u015b\u0107 renderingu\n\nProfil React/Lit/Vite, eliminacja niepotrzebnych re-render\u00f3w, lazy loading, splitting bundle. Mierz LCP < 2.5s.\n\nPlanfile status handoff:\n- When checks pass and the work is complete, run: `planfile ticket done PLF-001`\n- If blocked or missing input, run: `planfile ticket input PLF-001 --prompt \"<exact input needed>\" --note \"<what you verified>\"`\n- If implementation fails after a real attempt, run: `planfile ticket fail PLF-001 --error \"<short failure reason>\"`\n- Do not leave completed IDE work in waiting_input.",
+    "last_llm_reflection_summary": "",
+    "last_llm_reflection_ts": 0.0,
+    "last_operator_needs_input_signature": "",
+    "last_operator_needs_input_ticket_id": "",
+    "last_message_sent_ts": 0.0,
+    "last_message_sent_ide": "",
+    "last_driven_ticket_id": "",
+    "last_autopilot_status": "failed",
+    "telemetry_autopilot_idle_streak_skips": 0,
+    "telemetry_scan_after_idle_runs": 0,
+    "telemetry_scan_after_idle_tickets_applied": 0,
+    "last_scan_after_idle_ts": -1.0,
+    "last_scan_create_failed_fingerprint": "",
+    "last_scan_create_failed_ts": -1.0,
+    "last_scan_duplicate_fingerprint": "3:ed9c9fa374ce44df2ec2e0a4c3a5c2349be2b6fd",
+    "last_scan_duplicate_ts": 1780341818.6225643
+  }
+}

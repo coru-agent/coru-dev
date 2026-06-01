@@ -1,0 +1,183 @@
+@2026-06-01T19:22:16.387235Z version=koru.obs.v1 corr=process-733bfa598496 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:17.000918Z version=koru.obs.v1 corr=process-733c1eecc081 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","claim","PLF-002","--assigned-to","koru-shell","--lease-seconds","3600"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:17.578909Z version=koru.obs.v1 corr=process-733c4161c27a component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","start","PLF-002"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:18.076973Z version=koru.obs.v1 corr=shell-733c5f114ff1 component=control actor=planfile-runner
+command args='{"argv":["sh","-lc","task koru:mcp:bootstrap"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=sh replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:18.172623Z version=koru.obs.v1 corr=process-733c64c46506 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","block","PLF-002","--reason","FAIL: task: No Taskfile found at \"\" (or any of the parent directories until ownership changed). Run `task --init` to create a new Taskfile."],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:18.678412Z version=koru.obs.v1 corr=process-733c82eb762b component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:19.228141Z version=koru.obs.v1 corr=process-733ca3ae4a10 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:40.532331Z version=koru.obs.v1 corr=process-734199834bf9 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:53.502901Z version=koru.obs.v1 corr=process-73449e9d0706 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:54.004040Z version=koru.obs.v1 corr=process-7344bc7c216c component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","claim","PLF-006","--assigned-to","koru-shell","--lease-seconds","3600"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:54.555541Z version=koru.obs.v1 corr=process-7344dd5ac9d9 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","start","PLF-006"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:55.070463Z version=koru.obs.v1 corr=shell-7344fc0c0efb component=control actor=planfile-runner
+command args='{"argv":["sh","-lc","task koru:mcp:bootstrap"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=sh replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:55.096742Z version=koru.obs.v1 corr=process-7344fd9c1da3 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","block","PLF-006","--reason","FAIL: task: No Taskfile found at \"\" (or any of the parent directories until ownership changed). Run `task --init` to create a new Taskfile."],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:55.584168Z version=koru.obs.v1 corr=process-73451aab0d80 component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:22:56.235512Z version=koru.obs.v1 corr=process-7345417c6c53 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:38.631150Z version=koru.obs.v1 corr=process-734f20778522 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:39.062465Z version=koru.obs.v1 corr=process-734f3a2bcaa7 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","claim","PLF-007","--assigned-to","koru-shell","--lease-seconds","3600"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:39.507072Z version=koru.obs.v1 corr=process-734f54abaf11 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","start","PLF-007"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:39.946261Z version=koru.obs.v1 corr=shell-734f6ed831d4 component=control actor=planfile-runner
+command args='{"argv":["sh","-lc","koru self --project /home/tom/github/coru-agent/coru-dev --ide vscode repair --yes"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=sh replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:43.805639Z version=koru.obs.v1 corr=process-735054e18aa5 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","update","PLF-007","--note","KORU-SHELL-RUN {\"exit_code\": 0, \"run_id\": \"af5d094a00254f7f\", \"stderr_chars\": 0, \"stdout_chars\": 1968, \"truncated\": false}\n--- stdout ---\nkoru self-control: project=/home/tom/github/coru-agent/coru-dev\nkoru self-control: ok=False needs_repair=True summary={'"'"'ok'"'"': 4, '"'"'warn'"'"': 1, '"'"'fail'"'"': 0, '"'"'skip'"'"': 0}\n  - OK package_identity: source=-; installed=0.1.303; python=/home/tom/github/semcod/koru/.venv/bin/python3\n  - OK entrypoint_identity: path_koru=/home/tom/github/semcod/koru/.venv/bin/koru; local_koru=-\n  - WARN autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock; package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0; repairable=koru_version_mismatch:warning repair=`koru autopilot manage --ide vscode --fix`\n  - OK interface_registry: interfaces=13; families=artifact_exchange,browser_control,desktop_control,ide_control,observation,tool_invocation\n  - OK environment_profile: os=wayland|ide=vscode|llm=ide_chat|control=plugin_socket_vscode_family|verify=strict_ack; submit_key=Return; keyboard_fallback=False\nkoru self-control: actions\n  - {\"action\": \"install_plugin\", \"result\": {\"command\": [\"/usr/bin/code\", \"--install-extension\", \"/home/tom/github/semcod/koru/plugins/koru-autopilot-vscode/koru-autopilot-0.2.0.vsix\", \"--force\"], \"ide\": \"vscode\", \"message\": \"semcod.koru-autopilot-vscode is already installed for vscode; reassert rc=0; if the IDE was already open during install/reassert, run `Developer: Reload Window` (or restart it), then run `koru: Connect autopilot daemon`\", \"settings_path\": \"/home/tom/.config/Code/User/settings.json\", \"socket_path\": \"/run/user/1000/koru-autopilot-vscode.sock\", \"status\": \"already_installed\"}}\n  - {\"action\": \"shutdown_daemon_for_reload\", \"result\": {\"message\": \"daemon kept running: live plugin version already matches installed VSIX\", \"ok\": true, \"skipped\": true}}\n  - {\"action\": \"reload_ide_and_reconnect\", \"result\": {\"message\": \"Requested IDE Reload Window automatically; reconnect the plugin if it does not reconnect by itself.\", \"method\": \"reuse_window\", \"ok\": true, \"status\": \"automatic\"}}\n\n\n--- stderr ---\n(empty)"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:44.258378Z version=koru.obs.v1 corr=process-73506fdd631e component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","done","PLF-007"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:44.696553Z version=koru.obs.v1 corr=process-735089fd0b3f component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:45.206726Z version=koru.obs.v1 corr=process-7350a8645b79 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:45.702240Z version=koru.obs.v1 corr=cli-drive cycle=1 ticket=PLF-001 component=autonomy
+blocker because="no connected autopilot plugin for ide=vscode; keyboard fallback disabled for this request. Reload the IDE window or run the `koru: Connect autopilot daemon` command so the extension connects to this socket." ide=vscode name=drive_failed status=failed
+
+@2026-06-01T19:23:45.702890Z version=koru.obs.v1 corr=cli-drive cycle=1 ticket=PLF-001 component=autonomy
+next action=retry_next_cycle decision_kind=ticket_prompt ide=vscode
+
+@2026-06-01T19:23:45.720839Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-decision-trace:api component=control actor=autonomy-next
+command args='{"query":{},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /api/autonomy/trace" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:23:45.721674Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-decision-trace:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'trace show-decisions --url=http://127.0.0.1:8765'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:45.722472Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-interfaces:api component=control actor=autonomy-next
+command args='{"query":{},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /api/interfaces" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:23:45.723200Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-interfaces:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'trace show-interfaces --url=http://127.0.0.1:8765'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:45.723964Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:mark-ticket-input:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'ticket input PLF-001'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:45.724929Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:open-ticket:api component=control actor=autonomy-next
+command args='{"query":{"tab":"tickets","project":"/home/tom/github/coru-agent/coru-dev","_fragment":"PLF-001"},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:23:45.725769Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:validate-drive-trace:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru autopilot trace --project . --format drive-dsl --limit 30"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:23:45.726566Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:mark-ticket-input:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'ticket input PLF-001'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:15.859684Z version=koru.obs.v1 corr=process-7357cb728abb component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:16.450514Z version=koru.obs.v1 corr=process-7357eea7a578 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:16.936795Z version=koru.obs.v1 corr=cli-drive cycle=2 ticket=PLF-001 component=autonomy
+blocker because="no connected autopilot plugin for ide=vscode; keyboard fallback disabled for this request. Reload the IDE window or run the `koru: Connect autopilot daemon` command so the extension connects to this socket." ide=vscode name=drive_failed status=failed
+
+@2026-06-01T19:24:16.937615Z version=koru.obs.v1 corr=cli-drive cycle=2 ticket=PLF-001 component=autonomy
+next action=retry_next_cycle decision_kind=ticket_prompt ide=vscode
+
+@2026-06-01T19:24:16.964026Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-decision-trace:api component=control actor=autonomy-next
+command args='{"query":{},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /api/autonomy/trace" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:24:16.965129Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-decision-trace:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'trace show-decisions --url=http://127.0.0.1:8765'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:16.966255Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-interfaces:api component=control actor=autonomy-next
+command args='{"query":{},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /api/interfaces" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:24:16.967280Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-interfaces:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'trace show-interfaces --url=http://127.0.0.1:8765'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:16.968197Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:mark-ticket-input:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'ticket input PLF-001'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:16.969096Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:open-ticket:api component=control actor=autonomy-next
+command args='{"query":{"tab":"tickets","project":"/home/tom/github/coru-agent/coru-dev","_fragment":"PLF-001"},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:24:16.970078Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:validate-drive-trace:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru autopilot trace --project . --format drive-dsl --limit 30"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:24:16.971039Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:mark-ticket-input:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'ticket input PLF-001'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:17.094617Z version=koru.obs.v1 corr=process-73660d5292f6 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:17.636602Z version=koru.obs.v1 corr=process-73662d9fdea1 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:18.094428Z version=koru.obs.v1 corr=cli-drive cycle=3 ticket=PLF-001 component=autonomy
+blocker because="no connected autopilot plugin for ide=vscode; keyboard fallback disabled for this request. Reload the IDE window or run the `koru: Connect autopilot daemon` command so the extension connects to this socket." ide=vscode name=drive_failed status=failed
+
+@2026-06-01T19:25:18.095341Z version=koru.obs.v1 corr=cli-drive cycle=3 ticket=PLF-001 component=autonomy
+next action=retry_next_cycle decision_kind=ticket_prompt ide=vscode
+
+@2026-06-01T19:25:18.114413Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-decision-trace:api component=control actor=autonomy-next
+command args='{"query":{},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /api/autonomy/trace" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:25:18.115792Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-decision-trace:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'trace show-decisions --url=http://127.0.0.1:8765'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:18.116891Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-interfaces:api component=control actor=autonomy-next
+command args='{"query":{},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /api/interfaces" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:25:18.117875Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:show-interfaces:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'trace show-interfaces --url=http://127.0.0.1:8765'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:18.118891Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:mark-ticket-input:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'ticket input PLF-001'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:18.119910Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:open-ticket:api component=control actor=autonomy-next
+command args='{"query":{"tab":"tickets","project":"/home/tom/github/coru-agent/coru-dev","_fragment":"PLF-001"},"body":{},"headers":{}}' authority=medium command_version=koru.control.v1 interface_id=dashboard_rest operation="GET /" replayable=true surface=api transport=http_json verification=http_status
+
+@2026-06-01T19:25:18.120961Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:validate-drive-trace:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru autopilot trace --project . --format drive-dsl --limit 30"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:25:18.121963Z version=koru.obs.v1 corr=operator-action-PLF-001-drive_failed:mark-ticket-input:shell component=control actor=autonomy-next
+command args='{"argv":["bash","-lc","koru replay '"'"'ticket input PLF-001'"'"'"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=bash replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:53:32.487388Z version=koru.obs.v1 corr=process-74f0ca96920b component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:53:33.090622Z version=koru.obs.v1 corr=process-74f0ee8dabc7 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:55:13.391151Z version=koru.obs.v1 corr=process-750848edb5bb component=control actor=planfile-runner
+command args='{"argv":["/home/tom/miniconda3/bin/python","-m","planfile.cli","ticket","list","--status","open","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=/home/tom/miniconda3/bin/python replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+
+@2026-06-01T19:55:14.080986Z version=koru.obs.v1 corr=process-7508720de892 component=control actor=planfile-runner
+command args='{"argv":["planfile","ticket","show","PLF-001","--format","json"],"cwd":"/home/tom/github/coru-agent/coru-dev"}' authority=high command_version=koru.control.v1 interface_id=subprocess_local_tools operation=planfile replayable=true surface=shell_cli transport=subprocess verification=exit_code_and_output
+

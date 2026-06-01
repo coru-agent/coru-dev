@@ -1,0 +1,20 @@
+{
+  "cwd": "/home/tom/github/coru-agent/coru-dev",
+  "env": {
+    "KORU_AUTOPILOT_INSTANCE": "vscode",
+    "VIRTUAL_ENV": "/home/tom/github/semcod/clickmd/.venv"
+  },
+  "git_sha": "2e2b7ecf339f",
+  "pid": 2514709,
+  "ppid": 2453666,
+  "project": "/home/tom/github/coru-agent/coru-dev",
+  "python": "3.13.5",
+  "python_executable": "/home/tom/github/semcod/koru/.venv/bin/python3",
+  "schema": "koru.autopilot.daemon.v1",
+  "socket": "/run/user/1000/koru-autopilot-vscode.sock",
+  "socket_inode": 3422,
+  "started_at": "2026-06-01T19:23:30.821032+00:00",
+  "uid": 1000,
+  "uptime_seconds": 0.003900766372680664,
+  "version": "0.1.303"
+}

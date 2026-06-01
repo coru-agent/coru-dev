@@ -1,0 +1,621 @@
+sprint:
+  id: current
+  name: Current
+  status: active
+  tickets:
+    PLF-001:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:22:14.462409+00:00'
+      description: 'Frontend: wydajność renderingu
+
+
+        Profil React/Lit/Vite, eliminacja niepotrzebnych re-renderów, lazy loading,
+        splitting bundle. Mierz LCP < 2.5s.'
+      execution:
+        attempt: 0
+        max_attempts: 1
+        queue: default
+        state: ready
+      executor:
+        kind: human
+        mode: interactive
+      files: []
+      history:
+      - action: created
+        message: 'Frontend: wydajność renderingu
+
+
+          Profil React/Lit/Vite, eliminacja niepotrzebnych re-renderów, lazy loading,
+          splitting bundle. Mierz LCP < 2.5s.'
+        source: koru task
+        timestamp: '2026-06-01T19:22:14.462409+00:00'
+      id: PLF-001
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: 'Frontend: wydajność renderingu
+
+
+          Profil React/Lit/Vite, eliminacja niepotrzebnych re-renderów, lazy loading,
+          splitting bundle. Mierz LCP < 2.5s.'
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - frontend
+      - performance
+      - koru-wizard
+      name: 'Frontend: wydajność renderingu'
+      outputs:
+        artifacts: []
+        notes: []
+      priority: normal
+      source:
+        context:
+          input: 'Frontend: wydajność renderingu
+
+
+            Profil React/Lit/Vite, eliminacja niepotrzebnych re-renderów, lazy loading,
+            splitting bundle. Mierz LCP < 2.5s.'
+        timestamp: '2026-06-01T19:22:14.462409+00:00'
+        tool: koru-cli-nl
+      sprint: current
+      status: open
+      sync: {}
+      updated_at: '2026-06-01T19:22:14.462409+00:00'
+    PLF-002:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:22:15.155625+00:00'
+      description: 'BLOCKED: FAIL: task: No Taskfile found at "" (or any of the parent
+        directories until ownership changed). Run `task --init` to create a new Taskfile.'
+      execution:
+        assigned_to: koru-shell
+        attempt: 0
+        finished_at: '2026-06-01T19:22:40.337719Z'
+        lease_expires_at: '2026-06-01T20:22:17.479546Z'
+        max_attempts: 1
+        queue: operator
+        started_at: '2026-06-01T19:22:18.007914Z'
+        state: done
+      executor:
+        kind: shell
+        mode: noninteractive
+      files: []
+      history:
+      - action: created
+        message: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .cursor/mcp.json / .vscode/mcp.json
+          — task koru:mcp:bootstrap, potem Reload Window
+
+
+          Shell: `task koru:mcp:bootstrap`'
+        source: koru task
+        timestamp: '2026-06-01T19:22:15.155625+00:00'
+      - action: update
+        changes:
+        - execution
+        source: planfile.store
+        timestamp: '2026-06-01T19:22:17.489527+00:00'
+      - action: update
+        changes:
+        - execution
+        - status
+        execution_state: running
+        previous_execution_state: ready
+        previous_status: open
+        source: planfile.store
+        status: in_progress
+        timestamp: '2026-06-01T19:22:18.009759+00:00'
+      - action: update
+        changes:
+        - description
+        - status
+        previous_status: in_progress
+        source: planfile.store
+        status: blocked
+        timestamp: '2026-06-01T19:22:18.609170+00:00'
+      - action: update
+        changes:
+        - execution
+        - status
+        execution_state: done
+        previous_execution_state: running
+        previous_status: blocked
+        source: planfile.store
+        status: done
+        timestamp: '2026-06-01T19:22:40.339698+00:00'
+      id: PLF-002
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .cursor/mcp.json / .vscode/mcp.json
+          — task koru:mcp:bootstrap, potem Reload Window
+
+
+          Shell: `task koru:mcp:bootstrap`'
+        script: task koru:mcp:bootstrap
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - operator
+      - auto-pipeline
+      - step:mcp_koru
+      name: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .cursor/mcp.json / .vscode/mcp.json
+        — task koru:mcp:bootstrap, potem Reloa...'
+      outputs:
+        artifacts: []
+        notes: []
+      priority: high
+      source:
+        context:
+          dedupe_key: koru-operator-pipeline:operator-mcp-koru-w-ide-brak-koru-w-.cursor/mcp.json-/-.vscode/mcp.json-task-koru-mcp-bootstrap-potem-reloa...
+          detail: brak „koru” w .cursor/mcp.json / .vscode/mcp.json — task koru:mcp:bootstrap,
+            potem Reload Window
+          input: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .cursor/mcp.json / .vscode/mcp.json
+            — task koru:mcp:bootstrap, potem Reload Window
+
+
+            Shell: `task koru:mcp:bootstrap`'
+          step_id: mcp_koru
+          task_command: task koru:mcp:bootstrap
+        timestamp: '2026-06-01T19:22:15.155625+00:00'
+        tool: koru-operator-pipeline
+      sprint: current
+      status: done
+      sync: {}
+      updated_at: '2026-06-01T19:22:40.339673+00:00'
+    PLF-003:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:22:16.033938+00:00'
+      description: '`regix` is installed but no `regix.yaml` config exists in the
+        project root. Bootstrap with `task template:install:regix` (in koru) or follow
+        `workflows/on-change-gates.md`.
+
+
+        Role: regression metrics gate (CC / MI / coverage delta).'
+      execution:
+        attempt: 0
+        max_attempts: 1
+        queue: default
+        state: ready
+      executor:
+        kind: human
+        mode: interactive
+      files: []
+      history:
+      - action: created
+        message: '`regix` is installed but no `regix.yaml` config exists in the project
+          root. Bootstrap with `task template:install:regix` (in koru) or follow `workflows/on-change-gates.md`.
+
+
+          Role: regression metrics gate (CC / MI / coverage delta).'
+        source: koru task
+        timestamp: '2026-06-01T19:22:16.033938+00:00'
+      id: PLF-003
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: '`regix` is installed but no `regix.yaml` config exists in the project
+          root. Bootstrap with `task template:install:regix` (in koru) or follow `workflows/on-change-gates.md`.
+
+
+          Role: regression metrics gate (CC / MI / coverage delta).'
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - bootstrap
+      - gates
+      - scan
+      name: Bootstrap regix on-change gate
+      outputs:
+        artifacts: []
+        notes: []
+      priority: normal
+      source:
+        context:
+          dedupe_key: koru-scan:missing_gate:bootstrap regix on-change gate
+          input: '`regix` is installed but no `regix.yaml` config exists in the project
+            root. Bootstrap with `task template:install:regix` (in koru) or follow
+            `workflows/on-change-gates.md`.
+
+
+            Role: regression metrics gate (CC / MI / coverage delta).'
+          signal: missing_gate
+        timestamp: '2026-06-01T19:22:16.033938+00:00'
+        tool: koru-scan
+      sprint: current
+      status: open
+      sync: {}
+      updated_at: '2026-06-01T19:22:16.033938+00:00'
+    PLF-004:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:22:16.051188+00:00'
+      description: '`testql` is installed but no `testql-scenarios` config exists
+        in the project root. Bootstrap with `task template:install:testql` (in koru)
+        or follow `workflows/on-change-gates.md`.
+
+
+        Role: behavioural HTTP probes (TOON YAML scenarios).'
+      execution:
+        attempt: 0
+        max_attempts: 1
+        queue: default
+        state: ready
+      executor:
+        kind: human
+        mode: interactive
+      files: []
+      history:
+      - action: created
+        message: '`testql` is installed but no `testql-scenarios` config exists in
+          the project root. Bootstrap with `task template:install:testql` (in koru)
+          or follow `workflows/on-change-gates.md`.
+
+
+          Role: behavioural HTTP probes (TOON YAML scenarios).'
+        source: koru task
+        timestamp: '2026-06-01T19:22:16.051188+00:00'
+      id: PLF-004
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: '`testql` is installed but no `testql-scenarios` config exists in
+          the project root. Bootstrap with `task template:install:testql` (in koru)
+          or follow `workflows/on-change-gates.md`.
+
+
+          Role: behavioural HTTP probes (TOON YAML scenarios).'
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - bootstrap
+      - gates
+      - scan
+      name: Bootstrap testql on-change gate
+      outputs:
+        artifacts: []
+        notes: []
+      priority: normal
+      source:
+        context:
+          dedupe_key: koru-scan:missing_gate:bootstrap testql on-change gate
+          input: '`testql` is installed but no `testql-scenarios` config exists in
+            the project root. Bootstrap with `task template:install:testql` (in koru)
+            or follow `workflows/on-change-gates.md`.
+
+
+            Role: behavioural HTTP probes (TOON YAML scenarios).'
+          signal: missing_gate
+        timestamp: '2026-06-01T19:22:16.051188+00:00'
+        tool: koru-scan
+      sprint: current
+      status: open
+      sync: {}
+      updated_at: '2026-06-01T19:22:16.051188+00:00'
+    PLF-005:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:22:16.074230+00:00'
+      description: '`wup` is installed but no `wup.yaml` config exists in the project
+        root. Bootstrap with `task template:install:wup` (in koru) or follow `workflows/on-change-gates.md`.
+
+
+        Role: intelligent file watcher (3-layer: detect → quick → full).'
+      execution:
+        attempt: 0
+        max_attempts: 1
+        queue: default
+        state: ready
+      executor:
+        kind: human
+        mode: interactive
+      files: []
+      history:
+      - action: created
+        message: '`wup` is installed but no `wup.yaml` config exists in the project
+          root. Bootstrap with `task template:install:wup` (in koru) or follow `workflows/on-change-gates.md`.
+
+
+          Role: intelligent file watcher (3-layer: detect → quick → full).'
+        source: koru task
+        timestamp: '2026-06-01T19:22:16.074230+00:00'
+      id: PLF-005
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: '`wup` is installed but no `wup.yaml` config exists in the project
+          root. Bootstrap with `task template:install:wup` (in koru) or follow `workflows/on-change-gates.md`.
+
+
+          Role: intelligent file watcher (3-layer: detect → quick → full).'
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - bootstrap
+      - gates
+      - scan
+      name: Bootstrap wup on-change gate
+      outputs:
+        artifacts: []
+        notes: []
+      priority: normal
+      source:
+        context:
+          dedupe_key: koru-scan:missing_gate:bootstrap wup on-change gate
+          input: '`wup` is installed but no `wup.yaml` config exists in the project
+            root. Bootstrap with `task template:install:wup` (in koru) or follow `workflows/on-change-gates.md`.
+
+
+            Role: intelligent file watcher (3-layer: detect → quick → full).'
+          signal: missing_gate
+        timestamp: '2026-06-01T19:22:16.074230+00:00'
+        tool: koru-scan
+      sprint: current
+      status: open
+      sync: {}
+      updated_at: '2026-06-01T19:22:16.074230+00:00'
+    PLF-006:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:22:40.453003+00:00'
+      description: 'BLOCKED: FAIL: task: No Taskfile found at "" (or any of the parent
+        directories until ownership changed). Run `task --init` to create a new Taskfile.'
+      execution:
+        assigned_to: koru-shell
+        attempt: 0
+        lease_expires_at: '2026-06-01T20:22:54.460998Z'
+        max_attempts: 1
+        queue: operator
+        started_at: '2026-06-01T19:22:54.999337Z'
+        state: running
+      executor:
+        kind: shell
+        mode: noninteractive
+      files: []
+      history:
+      - action: created
+        message: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .vscode/mcp.json — task
+          koru:mcp:bootstrap, potem Reload Window
+
+
+          Shell: `task koru:mcp:bootstrap`'
+        source: koru task
+        timestamp: '2026-06-01T19:22:40.453003+00:00'
+      - action: update
+        changes:
+        - execution
+        source: planfile.store
+        timestamp: '2026-06-01T19:22:54.463559+00:00'
+      - action: update
+        changes:
+        - execution
+        - status
+        execution_state: running
+        previous_execution_state: ready
+        previous_status: open
+        source: planfile.store
+        status: in_progress
+        timestamp: '2026-06-01T19:22:55.001909+00:00'
+      - action: update
+        changes:
+        - description
+        - status
+        previous_status: in_progress
+        source: planfile.store
+        status: blocked
+        timestamp: '2026-06-01T19:22:55.516722+00:00'
+      id: PLF-006
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .vscode/mcp.json — task
+          koru:mcp:bootstrap, potem Reload Window
+
+
+          Shell: `task koru:mcp:bootstrap`'
+        script: task koru:mcp:bootstrap
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - operator
+      - auto-pipeline
+      - step:mcp_koru
+      name: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .vscode/mcp.json — task koru:mcp:bootstrap,
+        potem Reload Window Shell: `ta...'
+      outputs:
+        artifacts: []
+        notes: []
+      priority: high
+      source:
+        context:
+          dedupe_key: koru-operator-pipeline:operator-mcp-koru-w-ide-brak-koru-w-.vscode/mcp.json-task-koru-mcp-bootstrap-potem-reload-window-shell-ta...
+          detail: brak „koru” w .vscode/mcp.json — task koru:mcp:bootstrap, potem
+            Reload Window
+          input: '[OPERATOR] MCP „koru” w IDE: brak „koru” w .vscode/mcp.json — task
+            koru:mcp:bootstrap, potem Reload Window
+
+
+            Shell: `task koru:mcp:bootstrap`'
+          step_id: mcp_koru
+          task_command: task koru:mcp:bootstrap
+        timestamp: '2026-06-01T19:22:40.453003+00:00'
+        tool: koru-operator-pipeline
+      sprint: current
+      status: blocked
+      sync: {}
+      updated_at: '2026-06-01T19:22:55.516692+00:00'
+    PLF-007:
+      blocked_by: []
+      blocks: []
+      created_at: '2026-06-01T19:23:38.540214+00:00'
+      description: '[OPERATOR] Koru self-control (paczka / VSIX / runtime): self-control
+        auto-repair ran (install_plugin, shutdown_daemon_for_reload, reload_ide_and_reconnect);
+        autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock;
+        package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0;
+        repairable=koru_version_mismatch:warning
+
+
+        Shell: `koru self --project /home/tom/github/coru-agent/coru-dev --ide vscode
+        repair --yes`'
+      execution:
+        assigned_to: koru-shell
+        attempt: 0
+        finished_at: '2026-06-01T19:53:32.281280Z'
+        lease_expires_at: '2026-06-01T20:23:39.437447Z'
+        max_attempts: 1
+        queue: operator
+        started_at: '2026-06-01T19:23:39.878406Z'
+        state: done
+      executor:
+        kind: shell
+        mode: noninteractive
+      files: []
+      history:
+      - action: created
+        message: '[OPERATOR] Koru self-control (paczka / VSIX / runtime): self-control
+          auto-repair ran (install_plugin, shutdown_daemon_for_reload, reload_ide_and_reconnect);
+          autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock;
+          package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0;
+          repairable=koru_version_mismatch:warning
+
+
+          Shell: `koru self --project /home/tom/github/coru-agent/coru-dev --ide vscode
+          repair --yes`'
+        source: koru task
+        timestamp: '2026-06-01T19:23:38.540214+00:00'
+      - action: update
+        changes:
+        - execution
+        source: planfile.store
+        timestamp: '2026-06-01T19:23:39.440252+00:00'
+      - action: update
+        changes:
+        - execution
+        - status
+        execution_state: running
+        previous_execution_state: ready
+        previous_status: open
+        source: planfile.store
+        status: in_progress
+        timestamp: '2026-06-01T19:23:39.881311+00:00'
+      - action: update
+        changes:
+        - outputs
+        source: planfile.store
+        timestamp: '2026-06-01T19:23:44.190001+00:00'
+      - action: update
+        changes:
+        - execution
+        - status
+        execution_state: done
+        previous_execution_state: running
+        previous_status: in_progress
+        source: planfile.store
+        status: done
+        timestamp: '2026-06-01T19:23:44.629167+00:00'
+      - action: update
+        changes:
+        - execution
+        source: planfile.store
+        timestamp: '2026-06-01T19:53:32.284721+00:00'
+      id: PLF-007
+      inputs:
+        api_headers: {}
+        api_method: GET
+        api_timeout_seconds: 30.0
+        env_keys: []
+        prompt: '[OPERATOR] Koru self-control (paczka / VSIX / runtime): self-control
+          auto-repair ran (install_plugin, shutdown_daemon_for_reload, reload_ide_and_reconnect);
+          autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock;
+          package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0;
+          repairable=koru_version_mismatch:warning
+
+
+          Shell: `koru self --project /home/tom/github/coru-agent/coru-dev --ide vscode
+          repair --yes`'
+        script: koru self --project /home/tom/github/coru-agent/coru-dev --ide vscode
+          repair --yes
+      labels:
+      - koru
+      - nl-task
+      - llm-ready
+      - operator
+      - auto-pipeline
+      - step:self_control
+      name: '[OPERATOR] Koru self-control (paczka / VSIX / runtime): self-control
+        auto-repair ran (install_plugin, shutdown_daemon...'
+      outputs:
+        artifacts: []
+        notes:
+        - "KORU-SHELL-RUN {\"exit_code\": 0, \"run_id\": \"af5d094a00254f7f\", \"stderr_chars\":
+          0, \"stdout_chars\": 1968, \"truncated\": false}\n--- stdout ---\nkoru self-control:
+          project=/home/tom/github/coru-agent/coru-dev\nkoru self-control: ok=False
+          needs_repair=True summary={'ok': 4, 'warn': 1, 'fail': 0, 'skip': 0}\n  -
+          OK package_identity: source=-; installed=0.1.303; python=/home/tom/github/semcod/koru/.venv/bin/python3\n
+          \ - OK entrypoint_identity: path_koru=/home/tom/github/semcod/koru/.venv/bin/koru;
+          local_koru=-\n  - WARN autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock;
+          package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0;
+          repairable=koru_version_mismatch:warning repair=`koru autopilot manage --ide
+          vscode --fix`\n  - OK interface_registry: interfaces=13; families=artifact_exchange,browser_control,desktop_control,ide_control,observation,tool_invocation\n
+          \ - OK environment_profile: os=wayland|ide=vscode|llm=ide_chat|control=plugin_socket_vscode_family|verify=strict_ack;
+          submit_key=Return; keyboard_fallback=False\nkoru self-control: actions\n
+          \ - {\"action\": \"install_plugin\", \"result\": {\"command\": [\"/usr/bin/code\",
+          \"--install-extension\", \"/home/tom/github/semcod/koru/plugins/koru-autopilot-vscode/koru-autopilot-0.2.0.vsix\",
+          \"--force\"], \"ide\": \"vscode\", \"message\": \"semcod.koru-autopilot-vscode
+          is already installed for vscode; reassert rc=0; if the IDE was already open
+          during install/reassert, run `Developer: Reload Window` (or restart it),
+          then run `koru: Connect autopilot daemon`\", \"settings_path\": \"/home/tom/.config/Code/User/settings.json\",
+          \"socket_path\": \"/run/user/1000/koru-autopilot-vscode.sock\", \"status\":
+          \"already_installed\"}}\n  - {\"action\": \"shutdown_daemon_for_reload\",
+          \"result\": {\"message\": \"daemon kept running: live plugin version already
+          matches installed VSIX\", \"ok\": true, \"skipped\": true}}\n  - {\"action\":
+          \"reload_ide_and_reconnect\", \"result\": {\"message\": \"Requested IDE
+          Reload Window automatically; reconnect the plugin if it does not reconnect
+          by itself.\", \"method\": \"reuse_window\", \"ok\": true, \"status\": \"automatic\"}}\n\n\n---
+          stderr ---\n(empty)"
+      priority: high
+      source:
+        context:
+          dedupe_key: koru-operator-pipeline:operator-koru-self-control-paczka-/-vsix-/-runtime-self-control-auto-repair-ran-install_plugin-shutdown_daemon...
+          detail: 'self-control auto-repair ran (install_plugin, shutdown_daemon_for_reload,
+            reload_ide_and_reconnect); autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock;
+            package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0;
+            repairable=koru_version_mismatch:warning'
+          input: '[OPERATOR] Koru self-control (paczka / VSIX / runtime): self-control
+            auto-repair ran (install_plugin, shutdown_daemon_for_reload, reload_ide_and_reconnect);
+            autopilot_install_manager: ide=vscode; socket=/run/user/1000/koru-autopilot-vscode.sock;
+            package=0.1.303; source=0.1.304; connected=True; installed=0.2.0; expected=0.2.0;
+            repairable=koru_version_mismatch:warning
+
+
+            Shell: `koru self --project /home/tom/github/coru-agent/coru-dev --ide
+            vscode repair --yes`'
+          step_id: self_control
+          task_command: koru self --project /home/tom/github/coru-agent/coru-dev --ide
+            vscode repair --yes
+        timestamp: '2026-06-01T19:23:38.540214+00:00'
+        tool: koru-operator-pipeline
+      sprint: current
+      status: done
+      sync: {}
+      updated_at: '2026-06-01T19:53:32.284696+00:00'

@@ -1,0 +1,74 @@
+{
+  "cumulative": {
+    "autopilot_idle_streak_skips": 0,
+    "scan_after_idle_runs": 0,
+    "scan_after_idle_tickets_applied": 0
+  },
+  "cycle": 3,
+  "knobs": {
+    "autopilot_skip_drive_idle_streak": 0,
+    "scan_after_idle_min_interval_seconds": 60.0,
+    "scan_after_idle_queue": true
+  },
+  "last_cycle": {
+    "autopilot_skipped_idle_streak": false,
+    "environment_profile": {
+      "control": {
+        "can_confirm_submit": true,
+        "family": "ide_control",
+        "interface_id": "plugin_socket_vscode_family",
+        "operator_recovery": [
+          "reload_window",
+          "reconnect_plugin"
+        ],
+        "transport": "unix_socket_ndjson",
+        "verification_mode": "strict_ack",
+        "write_mode": "plugin_drive"
+      },
+      "decision_key": "os=wayland|ide=vscode|llm=ide_chat|control=plugin_socket_vscode_family|verify=strict_ack",
+      "ide": {
+        "config_path": "/home/tom/.config/Code/User/settings.json",
+        "extensions_metadata_path": "/home/tom/.vscode/extensions/extensions.json",
+        "id": "vscode",
+        "keyboard_fallback_default": false,
+        "label": "VS Code",
+        "plugin_supported": true,
+        "strict_plugin_ack_required": true,
+        "submit_key": "Return",
+        "trusted_publisher_required": true
+      },
+      "llm": {
+        "model": null,
+        "provider": "ide_chat",
+        "source": "default"
+      },
+      "os": {
+        "display_server": "wayland",
+        "platform": "linux",
+        "preferred_keyboard_interface": "os_injector_wtype",
+        "session": "wayland",
+        "system": "Linux"
+      },
+      "project": "/home/tom/github/coru-agent/coru-dev",
+      "schema": "koru.environment-profile/v1"
+    },
+    "scan_after_idle_applied": 0,
+    "scan_after_idle_run": false,
+    "scan_after_idle_skipped_rate_limit": false
+  },
+  "recent_decisions": [
+    {
+      "action": "submit_unverified",
+      "at": "2026-06-01T19:25:18+00:00",
+      "blocked_by": "failed",
+      "cycle": 3,
+      "decided": "drive_failed",
+      "evidence": "blocked_by=failed, diagnostics=skipped, wup=skipped",
+      "next_step": "retry next cycle (cached winner discarded)",
+      "observed": "queue=waiting_input ticket=PLF-001 streak=2",
+      "skip_because": "",
+      "skip_code": "failed"
+    }
+  ],
+  "updated_at": "2026-06-01T19:25:18.098780+00:00"
+}

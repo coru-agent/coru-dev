@@ -15,7 +15,7 @@ Official landing page for **coru-agent**: AI-powered closed-loop refactor orches
 
 ✅ **Hero** — Mission statement and quick CTA buttons  
 ✅ **Mission** — Core values (closed-loop, ticket-driven, regression-free, LLM orchestration, workspace-scale)  
-✅ **Features** — Key capabilities (autopilot, autonomous loop, planfile, policy gates, multi-repo, auditing)  
+✅ **Offer** — What the site offers (discovery, ticketed delivery, IDE automation, verification, multi-repo rollout, auditing)  
 ✅ **Workflow** — The Koru Loop (DETECT → PLAN → EXECUTE → VERIFY → HEAL → LEARN)  
 ✅ **Ecosystem** — 20+ integrated tools (planfile, regix, redup, testql, wup, vallm, redsl, prefact, costs)  
 ✅ **Quick Start** — 4-step onboarding  
@@ -51,4 +51,4 @@ This repo is configured with GitHub Pages enabled. Push to `main` branch to auto
 
 ## License
 
-Apache-2.0
+Licensed under Apache-2.0.

@@ -1,0 +1,12 @@
+{
+  "created_ticket_id": "PLF-001",
+  "created_ticket_title": "Frontend: wydajność renderingu",
+  "project": "/home/tom/github/coru-agent/coru-dev",
+  "schema": "koru.onboarding/v1",
+  "selected_ide": "jetbrains",
+  "strategy_path": [
+    "frontend",
+    "ux_perf"
+  ],
+  "updated_at": "2026-06-01T19:22:14.464990+00:00"
+}

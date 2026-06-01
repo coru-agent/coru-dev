@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-06-01T19:22:36.590235+00:00",
+  "project": "/home/tom/github/coru-agent/coru-dev",
+  "runtime_dir": ".planfile/.koru",
+  "schema": "koru.project/v1",
+  "source": "auto",
+  "updated_at": "2026-06-01T19:55:09.889525+00:00"
+}
