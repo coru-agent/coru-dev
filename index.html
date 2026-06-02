@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Koru — open-source (Apache-2.0) closed-loop refactor orchestration for multi-repo workspaces. pip install koru. Docs and source on GitHub semcod/koru.">
+    <meta name="description" content="Koru — open-source (Apache-2.0) closed-loop refactor orchestration for multi-repo workspaces. pip install koru, then koru auto. Docs and source on GitHub semcod/koru.">
     <meta name="keywords" content="koru, code refactoring, AI automation, LLM orchestration, planfile, open source, PyPI">
     <title>Koru | Open-Source Closed-Loop Refactor Orchestration</title>
     <link rel="stylesheet" href="styles.css">
@@ -32,81 +32,44 @@
             <p class="hero-eyebrow">coru.dev · official home of the Koru OSS library</p>
             <h1>🌀 Koru</h1>
             <p class="hero-subtitle">Open-source closed-loop refactor orchestration</p>
-            <p class="hero-description">
-                Python package on PyPI that coordinates LLM-augmented refactor tools with ticket-driven workflow
-                and regression-free verification across multi-repo workspaces.<br>
-                Detect → Plan → Execute → Verify → Heal → Learn → Repeat
-            </p>
+            <div class="hero-commands">
+                <div class="code-block code-block--terminal code-block--hero-terminal">
+                    <div class="code-block__header">Terminal</div>
+                    <pre><code>pip install koru
+koru auto</code></pre>
+                </div>
+            </div>
+            <div class="hero-video">
+                <h2 class="hero-video__title">How It Works</h2>
+                <p class="hero-video__subtitle">Jak to działa — closed-loop refactor on your repo</p>
+                <div class="video-container">
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231e293b' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-size='72' fill='%236366f1' text-anchor='middle' dominant-baseline='middle'%3E🌀 Koru Loop%3C/text%3E%3C/svg%3E">
+                        <source src="video/demo.mp4" type="video/mp4">
+                        <source src="https://github.com/semcod/koru/raw/main/koru.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
             <div class="hero-badges">
                 <span class="hero-badge">Apache-2.0</span>
                 <span class="hero-badge">PyPI · koru</span>
                 <span class="hero-badge">v0.1.306</span>
                 <span class="hero-badge">Python 3.12+</span>
             </div>
-            <div class="hero-install">
-                <div class="code-block code-block--hero">
-                    <div class="hero-install-lines">
-                        <div><span class="code-block__prompt">$</span> <code>pip install koru</code></div>
-                        <div><span class="code-block__prompt">$</span> <code>koru auto</code></div>
-                    </div>
-                </div>
-            </div>
+            <p class="hero-description hero-description--after-video">
+                Python package on PyPI that coordinates LLM-augmented refactor tools with ticket-driven workflow
+                and regression-free verification across multi-repo workspaces.<br>
+                Detect → Plan → Execute → Verify → Heal → Learn → Repeat
+            </p>
             <div class="hero-buttons">
                 <a href="#quickstart" class="btn btn-primary">Quick Start</a>
                 <a href="https://github.com/semcod/koru" class="btn btn-secondary" target="_blank" rel="noopener">semcod/koru</a>
                 <a href="https://pypi.org/project/koru/" class="btn btn-secondary" target="_blank" rel="noopener">PyPI</a>
             </div>
-        </div>
-    </section>
-
-    <!-- OSS Library Section -->
-    <section id="oss" class="oss">
-        <div class="container">
-            <h2>Open Source Library</h2>
-            <p class="section-intro">
-                <strong>Koru</strong> (<a href="https://github.com/semcod/koru" target="_blank" rel="noopener">github.com/semcod/koru</a>)
-                is the maintained OSS project behind this site — not a separate commercial product.
-                Install from PyPI, read the docs on GitHub, and contribute under Apache-2.0.
-            </p>
-            <div class="oss-grid">
-                <div class="oss-card">
-                    <h3>📦 Package</h3>
-                    <p>Base CLI with planfile queue, scan, and autopilot protocol. Optional extras cover API, agent, and dev workflows.</p>
-                </div>
-                <div class="oss-card">
-                    <h3>🧭 First run</h3>
-                    <p>After install, <code>koru auto</code> handles workspace setup and kicks off the closed-loop on your repo.</p>
-                    <p><a href="#quickstart">Quick Start</a> below — two commands, no wizard required.</p>
-                </div>
-                <div class="oss-card">
-                    <h3>📚 Source &amp; docs</h3>
-                    <p>
-                        <a href="https://github.com/semcod/koru/blob/main/README.md" target="_blank" rel="noopener">README</a> ·
-                        <a href="https://github.com/semcod/koru/tree/main/docs" target="_blank" rel="noopener">docs/</a> ·
-                        <a href="https://pypi.org/project/koru/" target="_blank" rel="noopener">PyPI releases</a>
-                    </p>
-                    <p>Validated on semcod monorepos, sample demo workspaces, and other multi-repo setups.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="container">
-            <h2>See Koru in Action</h2>
-            <div class="video-container">
-                <video 
-                    width="100%" 
-                    height="auto" 
-                    controls 
-                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231e293b' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-size='72' fill='%236366f1' text-anchor='middle' dominant-baseline='middle'%3E🌀 Koru Loop%3C/text%3E%3C/svg%3E"
-                    style="border-radius: 12px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2); background: #0f172a;">
-                    <source src="https://raw.githubusercontent.com/semcod/koru/main/koru.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <p class="video-caption">The Koru closed-loop refactor orchestration in action: detect, plan, execute, verify, heal, and repeat.</p>
         </div>
     </section>
 
@@ -369,10 +332,41 @@ koru auto</code></pre>
     <section class="cta">
         <div class="container">
             <h2>Try Koru on your repo</h2>
-            <p><code>pip install koru</code> then <code>koru auto</code> — closed-loop refactor orchestration on your workspace.</p>
+            <p>Install from PyPI and run the closed loop on your workspace — see Quick Start for the exact commands.</p>
             <div class="cta-buttons">
                 <a href="#quickstart" class="btn btn-primary">Quick Start</a>
                 <a href="https://github.com/semcod/koru" class="btn btn-secondary" target="_blank" rel="noopener">Star on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OSS Library Section -->
+    <section id="oss" class="oss">
+        <div class="container">
+            <h2>Open Source Library</h2>
+            <p class="section-intro">
+                <strong>Koru</strong> (<a href="https://github.com/semcod/koru" target="_blank" rel="noopener">github.com/semcod/koru</a>)
+                is the maintained OSS project behind this site — not a separate commercial product.
+                Install from PyPI, read the docs on GitHub, and contribute under Apache-2.0.
+            </p>
+            <div class="oss-grid">
+                <div class="oss-card">
+                    <h3>📦 Package</h3>
+                    <p>Base CLI with planfile queue, scan, and autopilot protocol. Optional extras cover API, agent, and dev workflows.</p>
+                </div>
+                <div class="oss-card">
+                    <h3>🧭 First run</h3>
+                    <p>Install from PyPI, then run the closed loop on your repo — workspace setup, scan, and ticket execution in one flow. See <a href="#quickstart">Quick Start</a> for the two-command sequence.</p>
+                </div>
+                <div class="oss-card">
+                    <h3>📚 Source &amp; docs</h3>
+                    <p>
+                        <a href="https://github.com/semcod/koru/blob/main/README.md" target="_blank" rel="noopener">README</a> ·
+                        <a href="https://github.com/semcod/koru/tree/main/docs" target="_blank" rel="noopener">docs/</a> ·
+                        <a href="https://pypi.org/project/koru/" target="_blank" rel="noopener">PyPI releases</a>
+                    </p>
+                    <p>Validated on semcod monorepos, sample demo workspaces, and other multi-repo setups.</p>
+                </div>
             </div>
         </div>
     </section>
