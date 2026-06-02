@@ -8,12 +8,82 @@
     <title>Koru | Open-Source Closed-Loop Refactor Orchestration</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌀</text></svg>">
+    <script>
+    (function () {
+        var STORAGE_KEY = 'coru-lang';
+        var SUPPORTED = ['pl', 'de', 'fr', 'es', 'it', 'pt', 'ru', 'zh-CN', 'ja', 'ko', 'nl', 'sv', 'cs', 'uk'];
+
+        function mapLang(tag) {
+            var raw = (tag || 'en').toLowerCase();
+            if (raw.indexOf('zh') === 0) return 'zh-CN';
+            if (SUPPORTED.indexOf(raw) !== -1) return raw;
+            var base = raw.split('-')[0];
+            return SUPPORTED.indexOf(base) !== -1 ? base : null;
+        }
+
+        function detectLocale() {
+            var saved = null;
+            try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+            if (saved) return saved;
+
+            var list = navigator.languages && navigator.languages.length
+                ? navigator.languages
+                : [navigator.language || 'en'];
+            for (var i = 0; i < list.length; i++) {
+                var mapped = mapLang(list[i]);
+                if (mapped) return mapped;
+                if ((list[i] || '').toLowerCase().indexOf('en') === 0) return 'en';
+            }
+            return 'en';
+        }
+
+        function setTranslateCookie(lang) {
+            var hostname = location.hostname;
+            var root = hostname.replace(/^www\./, '');
+            var domains = [hostname];
+            if (root.indexOf('.') !== -1) domains.push('.' + root);
+
+            if (lang === 'en') {
+                domains.forEach(function (domain) {
+                    document.cookie = 'googtrans=;path=/;domain=' + domain + ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+                    document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+                });
+                return;
+            }
+
+            var value = '/en/' + lang;
+            domains.forEach(function (domain) {
+                document.cookie = 'googtrans=' + value + ';path=/;domain=' + domain;
+            });
+            document.cookie = 'googtrans=' + value + ';path=/';
+        }
+
+        var locale = detectLocale();
+        if (locale !== 'en') {
+            setTranslateCookie(locale);
+        } else {
+            try {
+                if (localStorage.getItem(STORAGE_KEY) === 'en') {
+                    setTranslateCookie('en');
+                }
+            } catch (e) {}
+        }
+
+        window.__coruI18n = {
+            STORAGE_KEY: STORAGE_KEY,
+            SUPPORTED: SUPPORTED,
+            detectLocale: detectLocale,
+            mapLang: mapLang,
+            initialLocale: locale
+        };
+    })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">🌀 Koru</div>
+            <div class="nav-brand notranslate">🌀 Koru</div>
             <ul class="nav-menu">
                 <li><a href="#oss">Open Source</a></li>
                 <li><a href="#mission">Mission</a></li>
@@ -22,6 +92,12 @@
                 <li><a href="#quickstart">Quick Start</a></li>
                 <li><a href="#docs">Docs</a></li>
                 <li><a href="https://github.com/semcod/koru" target="_blank" rel="noopener">GitHub</a></li>
+                <li class="nav-lang">
+                    <label for="lang-select" class="visually-hidden">Language</label>
+                    <select id="lang-select" class="lang-select" aria-label="Choose page language">
+                        <option value="en">English</option>
+                    </select>
+                </li>
             </ul>
         </div>
     </nav>
@@ -29,24 +105,29 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <p class="hero-eyebrow">coru.dev · official home of the Koru OSS library</p>
-            <h1>🌀 Koru</h1>
+            <p class="hero-eyebrow"><span class="notranslate">coru.dev</span> · official home of the <span class="notranslate">Koru</span> OSS library</p>
+            <h1 class="notranslate">🌀 Koru</h1>
             <p class="hero-subtitle">Open-source closed-loop refactor orchestration</p>
             <div class="hero-commands">
-                <div class="code-block code-block--terminal code-block--hero-terminal">
-                    <div class="code-block__header">Terminal</div>
+                <div class="code-block code-block--terminal code-block--hero-terminal notranslate">
+                    <div class="code-block__header">
+                        <span class="code-block__label">Terminal</span>
+                        <button type="button" class="code-block__copy" aria-label="Copy install commands to clipboard">Copy</button>
+                    </div>
                     <pre><code>pip install koru
 koru auto</code></pre>
                 </div>
             </div>
             <div class="hero-video">
                 <h2 class="hero-video__title">How It Works</h2>
-                <p class="hero-video__subtitle">Jak to działa — closed-loop refactor on your repo</p>
+                <p class="hero-video__subtitle">Closed-loop refactor on your repo</p>
                 <div class="video-container">
                     <video
                         controls
+                        autoplay
+                        muted
                         playsinline
-                        preload="metadata"
+                        preload="auto"
                         poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231e293b' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-size='72' fill='%236366f1' text-anchor='middle' dominant-baseline='middle'%3E🌀 Koru Loop%3C/text%3E%3C/svg%3E">
                         <source src="video/demo.mp4" type="video/mp4">
                         <source src="https://github.com/semcod/koru/raw/main/koru.mp4" type="video/mp4">
@@ -54,7 +135,7 @@ koru auto</code></pre>
                     </video>
                 </div>
             </div>
-            <div class="hero-badges">
+            <div class="hero-badges notranslate">
                 <span class="hero-badge">Apache-2.0</span>
                 <span class="hero-badge">PyPI · koru</span>
                 <span class="hero-badge">v0.1.306</span>
@@ -63,12 +144,12 @@ koru auto</code></pre>
             <p class="hero-description hero-description--after-video">
                 Python package on PyPI that coordinates LLM-augmented refactor tools with ticket-driven workflow
                 and regression-free verification across multi-repo workspaces.<br>
-                Detect → Plan → Execute → Verify → Heal → Learn → Repeat
+                <span class="notranslate">Detect → Plan → Execute → Verify → Heal → Learn → Repeat</span>
             </p>
             <div class="hero-buttons">
                 <a href="#quickstart" class="btn btn-primary">Quick Start</a>
-                <a href="https://github.com/semcod/koru" class="btn btn-secondary" target="_blank" rel="noopener">semcod/koru</a>
-                <a href="https://pypi.org/project/koru/" class="btn btn-secondary" target="_blank" rel="noopener">PyPI</a>
+                <a href="https://github.com/semcod/koru" class="btn btn-secondary notranslate" target="_blank" rel="noopener">semcod/koru</a>
+                <a href="https://pypi.org/project/koru/" class="btn btn-secondary notranslate" target="_blank" rel="noopener">PyPI</a>
             </div>
         </div>
     </section>
@@ -140,8 +221,8 @@ koru auto</code></pre>
     <!-- Workflow Section -->
     <section class="workflow">
         <div class="container">
-            <h2>The Koru Loop</h2>
-            <div class="workflow-diagram">
+            <h2>The <span class="notranslate">Koru</span> Loop</h2>
+            <div class="workflow-diagram notranslate">
                 <div class="workflow-step">
                     <div class="step-number">1</div>
                     <div class="step-title">DETECT</div>
@@ -186,7 +267,7 @@ koru auto</code></pre>
         <div class="container">
             <h2>Connected Ecosystem</h2>
             <p class="section-intro">20+ integrated tools for the complete refactor automation pipeline</p>
-            <div class="ecosystem-grid">
+            <div class="ecosystem-grid notranslate">
                 <div class="tool-card">
                     <h4>planfile</h4>
                     <p>Ticket backlog & execution gateway</p>
@@ -232,8 +313,11 @@ koru auto</code></pre>
         <div class="container">
             <h2>Quick Start</h2>
             <p class="section-intro">Two commands to install and run Koru on your repo. For wizard, queue mode, scan passes, and other workflows, see the <a href="https://github.com/semcod/koru/blob/main/README.md" target="_blank" rel="noopener">README</a> and <a href="https://github.com/semcod/koru/blob/main/docs/cli-examples.md" target="_blank" rel="noopener">CLI examples</a>.</p>
-            <div class="code-block code-block--terminal">
-                <div class="code-block__header">Terminal</div>
+            <div class="code-block code-block--terminal notranslate">
+                <div class="code-block__header">
+                    <span class="code-block__label">Terminal</span>
+                    <button type="button" class="code-block__copy" aria-label="Copy install commands to clipboard">Copy</button>
+                </div>
                 <pre><code>pip install koru
 koru auto</code></pre>
             </div>
@@ -276,22 +360,22 @@ koru auto</code></pre>
             <h2>By The Numbers</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-value">$31.44</div>
+                    <div class="stat-value notranslate">$31.44</div>
                     <div class="stat-label">Tracked LLM cost</div>
-                    <div class="stat-detail">406 commits (koru repo)</div>
+                    <div class="stat-detail notranslate">406 commits (koru repo)</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">0.1.306</div>
+                    <div class="stat-value notranslate">0.1.306</div>
                     <div class="stat-label">PyPI version</div>
-                    <div class="stat-detail">Jun 2026</div>
+                    <div class="stat-detail notranslate">Jun 2026</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">130h</div>
+                    <div class="stat-value notranslate">130h</div>
                     <div class="stat-label">Human dev time</div>
                     <div class="stat-detail">tracked in README</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">20+</div>
+                    <div class="stat-value notranslate">20+</div>
                     <div class="stat-label">Integrated Tools</div>
                     <div class="stat-detail">Full pipeline</div>
                 </div>
@@ -345,7 +429,7 @@ koru auto</code></pre>
         <div class="container">
             <h2>Open Source Library</h2>
             <p class="section-intro">
-                <strong>Koru</strong> (<a href="https://github.com/semcod/koru" target="_blank" rel="noopener">github.com/semcod/koru</a>)
+                <strong class="notranslate">Koru</strong> (<a href="https://github.com/semcod/koru" class="notranslate" target="_blank" rel="noopener">github.com/semcod/koru</a>)
                 is the maintained OSS project behind this site — not a separate commercial product.
                 Install from PyPI, read the docs on GitHub, and contribute under Apache-2.0.
             </p>
@@ -374,11 +458,23 @@ koru auto</code></pre>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 <a href="https://github.com/semcod/koru" target="_blank" rel="noopener">Koru</a> (semcod/koru). Apache-2.0.</p>
-            <p>coru.dev — marketing site for the open-source library. Landing repo: <a href="https://github.com/coru-agent/coru-dev" target="_blank" rel="noopener">coru-agent/coru-dev</a>.</p>
+            <p>&copy; 2026 <a href="https://github.com/semcod/koru" class="notranslate" target="_blank" rel="noopener">Koru</a> (<span class="notranslate">semcod/koru</span>). Apache-2.0.</p>
+            <p><span class="notranslate">coru.dev</span> — marketing site for the open-source library. Landing repo: <a href="https://github.com/coru-agent/coru-dev" class="notranslate" target="_blank" rel="noopener">coru-agent/coru-dev</a>.</p>
         </div>
     </footer>
 
+    <div id="google_translate_element" class="visually-hidden" aria-hidden="true"></div>
     <script src="script.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,pl,de,fr,es,it,pt,ru,zh-CN,ja,ko,nl,sv,cs,uk',
+                autoDisplay: false,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
