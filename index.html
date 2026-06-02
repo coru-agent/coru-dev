@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="🌀 coru-agent: AI-powered discovery, refactor orchestration, verification, and healing for large-scale codebases.">
-    <meta name="keywords" content="code refactoring, AI automation, LLM, orchestration, DevOps">
-    <title>🌀 coru | Closed-Loop Refactor Orchestration</title>
+    <meta name="description" content="Koru — open-source (Apache-2.0) closed-loop refactor orchestration for multi-repo workspaces. pip install koru. Docs and source on GitHub semcod/koru.">
+    <meta name="keywords" content="koru, code refactoring, AI automation, LLM orchestration, planfile, open source, PyPI">
+    <title>Koru | Open-Source Closed-Loop Refactor Orchestration</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌀</text></svg>">
 </head>
@@ -13,14 +13,15 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">🌀 coru</div>
+            <div class="nav-brand">🌀 Koru</div>
             <ul class="nav-menu">
+                <li><a href="#oss">Open Source</a></li>
                 <li><a href="#mission">Mission</a></li>
-                <li><a href="#offer">Offer</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
                 <li><a href="#ecosystem">Ecosystem</a></li>
                 <li><a href="#quickstart">Quick Start</a></li>
                 <li><a href="#docs">Docs</a></li>
-                <li><a href="https://github.com/coru-agent" target="_blank">GitHub</a></li>
+                <li><a href="https://github.com/semcod/koru" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
         </div>
     </nav>
@@ -28,15 +29,64 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>🌀 coru-agent</h1>
-            <p class="hero-subtitle">AI-Powered Discovery, Delivery, and Verification</p>
+            <p class="hero-eyebrow">coru.dev · official home of the Koru OSS library</p>
+            <h1>🌀 Koru</h1>
+            <p class="hero-subtitle">Open-source closed-loop refactor orchestration</p>
             <p class="hero-description">
-                Move from broad codebase discovery to safe implementation with one coordinated loop.<br>
-                Detect → Plan → Execute → Verify → Heal → Repeat
+                Python package on PyPI that coordinates LLM-augmented refactor tools with ticket-driven workflow
+                and regression-free verification across multi-repo workspaces.<br>
+                Detect → Plan → Execute → Verify → Heal → Learn → Repeat
             </p>
+            <div class="hero-badges">
+                <span class="hero-badge">Apache-2.0</span>
+                <span class="hero-badge">PyPI · koru</span>
+                <span class="hero-badge">v0.1.306</span>
+                <span class="hero-badge">Python 3.12+</span>
+            </div>
+            <div class="hero-install">
+                <div class="code-block code-block--hero">
+                    <div class="hero-install-lines">
+                        <div><span class="code-block__prompt">$</span> <code>pip install koru</code></div>
+                        <div><span class="code-block__prompt">$</span> <code>koru auto</code></div>
+                    </div>
+                </div>
+            </div>
             <div class="hero-buttons">
-                <a href="#quickstart" class="btn btn-primary">Get Started</a>
-                <a href="https://github.com/semcod/koru" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                <a href="#quickstart" class="btn btn-primary">Quick Start</a>
+                <a href="https://github.com/semcod/koru" class="btn btn-secondary" target="_blank" rel="noopener">semcod/koru</a>
+                <a href="https://pypi.org/project/koru/" class="btn btn-secondary" target="_blank" rel="noopener">PyPI</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OSS Library Section -->
+    <section id="oss" class="oss">
+        <div class="container">
+            <h2>Open Source Library</h2>
+            <p class="section-intro">
+                <strong>Koru</strong> (<a href="https://github.com/semcod/koru" target="_blank" rel="noopener">github.com/semcod/koru</a>)
+                is the maintained OSS project behind this site — not a separate commercial product.
+                Install from PyPI, read the docs on GitHub, and contribute under Apache-2.0.
+            </p>
+            <div class="oss-grid">
+                <div class="oss-card">
+                    <h3>📦 Package</h3>
+                    <p>Base CLI with planfile queue, scan, and autopilot protocol. Optional extras cover API, agent, and dev workflows.</p>
+                </div>
+                <div class="oss-card">
+                    <h3>🧭 First run</h3>
+                    <p>After install, <code>koru auto</code> handles workspace setup and kicks off the closed-loop on your repo.</p>
+                    <p><a href="#quickstart">Quick Start</a> below — two commands, no wizard required.</p>
+                </div>
+                <div class="oss-card">
+                    <h3>📚 Source &amp; docs</h3>
+                    <p>
+                        <a href="https://github.com/semcod/koru/blob/main/README.md" target="_blank" rel="noopener">README</a> ·
+                        <a href="https://github.com/semcod/koru/tree/main/docs" target="_blank" rel="noopener">docs/</a> ·
+                        <a href="https://pypi.org/project/koru/" target="_blank" rel="noopener">PyPI releases</a>
+                    </p>
+                    <p>Validated on semcod monorepos, sample demo workspaces, and other multi-repo setups.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -90,11 +140,11 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="offer" class="features">
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="features">
         <div class="container">
-            <h2>What We Offer</h2>
-            <p class="ecosystem-intro">A practical automation stack for teams that need safe modernization, ticketed execution, and repeatable verification.</p>
+            <h2>What Koru Delivers</h2>
+            <p class="section-intro">Capabilities shipped in the open-source library — discovery, ticketed execution, IDE automation, verification, and fleet-scale rollout from one CLI.</p>
             <div class="features-grid">
                 <div class="feature-item">
                     <h3>🔎 Discovery Passes</h3>
@@ -172,7 +222,7 @@
     <section id="ecosystem" class="ecosystem">
         <div class="container">
             <h2>Connected Ecosystem</h2>
-            <p class="ecosystem-intro">20+ integrated tools for the complete refactor automation pipeline</p>
+            <p class="section-intro">20+ integrated tools for the complete refactor automation pipeline</p>
             <div class="ecosystem-grid">
                 <div class="tool-card">
                     <h4>planfile</h4>
@@ -218,23 +268,11 @@
     <section id="quickstart" class="quickstart">
         <div class="container">
             <h2>Quick Start</h2>
-            <div class="quickstart-steps">
-                <div class="step">
-                    <div class="step-label">Step 1: Install</div>
-                    <code>pip install koru</code>
-                </div>
-                <div class="step">
-                    <div class="step-label">Step 2: Initialize</div>
-                    <code>koru --init</code>
-                </div>
-                <div class="step">
-                    <div class="step-label">Step 3: View Brief</div>
-                    <code>koru</code>
-                </div>
-                <div class="step">
-                    <div class="step-label">Step 4: Run Loop</div>
-                    <code>koru --queue --loop</code>
-                </div>
+            <p class="section-intro">Two commands to install and run Koru on your repo. For wizard, queue mode, scan passes, and other workflows, see the <a href="https://github.com/semcod/koru/blob/main/README.md" target="_blank" rel="noopener">README</a> and <a href="https://github.com/semcod/koru/blob/main/docs/cli-examples.md" target="_blank" rel="noopener">CLI examples</a>.</p>
+            <div class="code-block code-block--terminal">
+                <div class="code-block__header">Terminal</div>
+                <pre><code>pip install koru
+koru auto</code></pre>
             </div>
         </div>
     </section>
@@ -275,19 +313,19 @@
             <h2>By The Numbers</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-value">$13.86</div>
-                    <div class="stat-label">LLM Usage</div>
-                    <div class="stat-detail">257 commits</div>
+                    <div class="stat-value">$31.44</div>
+                    <div class="stat-label">Tracked LLM cost</div>
+                    <div class="stat-detail">406 commits (koru repo)</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">0.1.197</div>
-                    <div class="stat-label">Current Version</div>
-                    <div class="stat-detail">May 2026</div>
+                    <div class="stat-value">0.1.306</div>
+                    <div class="stat-label">PyPI version</div>
+                    <div class="stat-detail">Jun 2026</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">82.8h</div>
-                    <div class="stat-label">Human Dev Time</div>
-                    <div class="stat-detail">$8,285 value</div>
+                    <div class="stat-value">130h</div>
+                    <div class="stat-label">Human dev time</div>
+                    <div class="stat-detail">tracked in README</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-value">20+</div>
@@ -303,19 +341,23 @@
         <div class="container">
             <h2>Documentation</h2>
             <div class="docs-grid">
-                <a href="https://github.com/semcod/koru/blob/main/docs/autopilot-quickstart.md" class="doc-link" target="_blank">
+                <a href="https://github.com/semcod/koru/blob/main/README.md" class="doc-link" target="_blank" rel="noopener">
+                    <h4>README</h4>
+                    <p>Install extras, wizard, and architecture overview</p>
+                </a>
+                <a href="https://github.com/semcod/koru/blob/main/docs/autopilot-quickstart.md" class="doc-link" target="_blank" rel="noopener">
                     <h4>Autopilot Quickstart</h4>
                     <p>30-second daemon + plugin setup</p>
                 </a>
-                <a href="https://github.com/semcod/koru/blob/main/docs/agent-guide.md" class="doc-link" target="_blank">
+                <a href="https://github.com/semcod/koru/blob/main/docs/agent-guide.md" class="doc-link" target="_blank" rel="noopener">
                     <h4>Agent Guide</h4>
                     <p>Windsurf/Cursor/Claude Code workflow</p>
                 </a>
-                <a href="https://github.com/semcod/koru/blob/main/docs/cli-examples.md" class="doc-link" target="_blank">
+                <a href="https://github.com/semcod/koru/blob/main/docs/cli-examples.md" class="doc-link" target="_blank" rel="noopener">
                     <h4>CLI Examples</h4>
                     <p>40+ common koru commands</p>
                 </a>
-                <a href="https://github.com/semcod/koru/blob/main/docs/IDE_PROTOCOL.md" class="doc-link" target="_blank">
+                <a href="https://github.com/semcod/koru/blob/main/docs/IDE_PROTOCOL.md" class="doc-link" target="_blank" rel="noopener">
                     <h4>IDE Protocol</h4>
                     <p>Formal wire contract for IDE integration</p>
                 </a>
@@ -326,11 +368,11 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready for a Pilot?</h2>
-            <p>Start with a discovery pass, then let Koru turn the findings into tracked tickets and safe execution loops</p>
+            <h2>Try Koru on your repo</h2>
+            <p><code>pip install koru</code> then <code>koru auto</code> — closed-loop refactor orchestration on your workspace.</p>
             <div class="cta-buttons">
-                <a href="https://github.com/semcod/koru" class="btn btn-primary" target="_blank">Explore semcod/koru</a>
-                <a href="https://github.com/coru-agent" class="btn btn-secondary" target="_blank">Follow @coru-agent</a>
+                <a href="#quickstart" class="btn btn-primary">Quick Start</a>
+                <a href="https://github.com/semcod/koru" class="btn btn-secondary" target="_blank" rel="noopener">Star on GitHub</a>
             </div>
         </div>
     </section>
@@ -338,8 +380,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 coru-agent. Licensed under Apache-2.0.</p>
-            <p>Built for teams automating code at scale. 🌀</p>
+            <p>&copy; 2026 <a href="https://github.com/semcod/koru" target="_blank" rel="noopener">Koru</a> (semcod/koru). Apache-2.0.</p>
+            <p>coru.dev — marketing site for the open-source library. Landing repo: <a href="https://github.com/coru-agent/coru-dev" target="_blank" rel="noopener">coru-agent/coru-dev</a>.</p>
         </div>
     </footer>
 
