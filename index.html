@@ -7,7 +7,7 @@
     <meta name="keywords" content="koru, code refactoring, AI automation, LLM orchestration, planfile, open source, PyPI">
     <title>Koru | Open-Source Closed-Loop Refactor Orchestration</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌀</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round'><path d='M12 12a.75.75 0 0 1 .75.75A2.25 2.25 0 0 1 10.5 15 4 4 0 0 1 6.5 11 6 6 0 0 1 12.5 5 8 8 0 0 1 20.5 13 10 10 0 0 1 10.5 23'/></svg>">
     <script>
     (function () {
         var STORAGE_KEY = 'coru-lang';
@@ -80,17 +80,43 @@
     </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-spiral" viewBox="0 0 24 24"><path d="M12 12a.75.75 0 0 1 .75.75A2.25 2.25 0 0 1 10.5 15 4 4 0 0 1 6.5 11 6 6 0 0 1 12.5 5 8 8 0 0 1 20.5 13 10 10 0 0 1 10.5 23"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.97-6.68M21 3v6h-6"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 8h16v3a1.5 1.5 0 0 0 0 3v3H4v-3a1.5 1.5 0 0 0 0-3z"/><path d="M9.5 8v2M9.5 13v1M9.5 16v1" stroke-dasharray="1.5 2.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.8V11c0 4.7-3.2 7.9-7 10-3.8-2.1-7-5.3-7-10V5.8z"/><path d="M9 11.5l2.2 2.2L15.5 9"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 10.5h4M10 13.5h4M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="5" y="9" width="14" height="10" rx="2"/><path d="M12 9V5.5"/><circle cx="12" cy="4" r="1.2"/><circle cx="9.5" cy="13.5" r="0.6" fill="currentColor"/><circle cx="14.5" cy="13.5" r="0.6" fill="currentColor"/><path d="M9.5 16.5h5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 20v-6M12 20V7M17 20v-9"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12.5" rx="2"/><path d="M9 21h6M12 17v4"/><path d="M6.5 9.5l2.5 2-2.5 2M11 13.5h4"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h5v3.2a1.8 1.8 0 1 0 3.6 0V4H20v5h-2.8a1.8 1.8 0 1 0 0 3.6H20V20h-5v-3.2a1.8 1.8 0 1 0-3.6 0V20H4v-5h2.8a1.8 1.8 0 1 0 0-3.6H4V9h5z"/></symbol>
+    <symbol id="i-bandage" viewBox="0 0 24 24"><rect x="2.8" y="8.2" width="18.4" height="7.6" rx="3.8" transform="rotate(-45 12 12)"/><path d="M10.8 10.8l.01.01M13.2 10.8l.01.01M10.8 13.2l.01.01M13.2 13.2l.01.01"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13M14 4.5L17.5 8 14 11.5M20 16H7M10 12.5L6.5 16l3.5 3.5"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12L4 7.5M12 12v9M16 5.2L8 9.8"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M6.5 10.5h.01M9.5 10.5h.01M12.5 10.5h.01M15.5 10.5h.01M6.5 13.5h.01M9 13.5h6M17.5 13.5h.01M17.5 10.5h.01"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></symbol>
+    <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M5.5 3.5l7 16.5 2.2-6.8 6.8-2.2z"/></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="8.5" cy="8.5" r="0.8" fill="currentColor"/><circle cx="15.5" cy="8.5" r="0.8" fill="currentColor"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/><circle cx="8.5" cy="15.5" r="0.8" fill="currentColor"/><circle cx="15.5" cy="15.5" r="0.8" fill="currentColor"/></symbol>
+  </defs>
+</svg>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="container">
-            <div class="nav-brand notranslate">🌀 Koru</div>
+            <div class="nav-brand notranslate"><svg class="svgi svgi--brand" aria-hidden="true"><use href="#i-spiral"/></svg> Koru</div>
             <ul class="nav-menu">
                 <li><a href="#oss">Open Source</a></li>
                 <li><a href="#mission">Mission</a></li>
                 <li><a href="#capabilities">Capabilities</a></li>
                 <li><a href="#ecosystem">Ecosystem</a></li>
+                <li><a href="#in-action">In Action</a></li>
                 <li><a href="#quickstart">Quick Start</a></li>
-                <li><a href="#docs">Docs</a></li>
+                <li><a href="https://docs.coru.dev">Docs</a></li>
                 <li><a href="https://github.com/semcod/koru" target="_blank" rel="noopener">GitHub</a></li>
                 <li class="nav-lang">
                     <label for="lang-select" class="visually-hidden">Language</label>
@@ -102,11 +128,13 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <p class="hero-eyebrow"><span class="notranslate">coru.dev</span> · official home of the <span class="notranslate">Koru</span> OSS library</p>
-            <h1 class="notranslate">🌀 Koru</h1>
+            <h1 class="notranslate"><svg class="svgi svgi--hero" aria-hidden="true"><use href="#i-spiral"/></svg> Koru</h1>
             <p class="hero-subtitle">Open-source closed-loop refactor orchestration</p>
             <div class="hero-commands">
                 <div class="code-block code-block--terminal code-block--hero-terminal notranslate">
@@ -128,7 +156,7 @@ koru auto</code></pre>
                         muted
                         playsinline
                         preload="auto"
-                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231e293b' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-size='72' fill='%236366f1' text-anchor='middle' dominant-baseline='middle'%3E🌀 Koru Loop%3C/text%3E%3C/svg%3E">
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231e293b' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-size='72' fill='%236366f1' text-anchor='middle' dominant-baseline='middle'%3EKoru Loop%3C/text%3E%3C/svg%3E">
                         <source src="video/demo.mp4" type="video/mp4">
                         <source src="https://github.com/semcod/koru/raw/main/koru.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -161,22 +189,22 @@ koru auto</code></pre>
             <p>Transform how teams approach large-scale code modernization with intelligent, auditable automation.</p>
             <div class="mission-grid">
                 <div class="mission-card">
-                    <div class="icon">🔄</div>
+                    <div class="icon"><svg class="svgi svgi--card" aria-hidden="true"><use href="#i-refresh"/></svg></div>
                     <h3>Closed-Loop Automation</h3>
                     <p>Detect issues → plan fixes → execute changes → verify safety → heal failures → repeat</p>
                 </div>
                 <div class="mission-card">
-                    <div class="icon">🎫</div>
+                    <div class="icon"><svg class="svgi svgi--card" aria-hidden="true"><use href="#i-ticket"/></svg></div>
                     <h3>Ticket-Driven Workflow</h3>
                     <p>Structured, auditable refactor pipelines with zero-trust policy gates</p>
                 </div>
                 <div class="mission-card">
-                    <div class="icon">🛡️</div>
+                    <div class="icon"><svg class="svgi svgi--card" aria-hidden="true"><use href="#i-shield"/></svg></div>
                     <h3>Regression-Free Verification</h3>
                     <p>Multi-tier validation (unit tests, integration tests, semantic analysis)</p>
                 </div>
                 <div class="mission-card">
-                    <div class="icon">🧠</div>
+                    <div class="icon"><svg class="svgi svgi--card" aria-hidden="true"><use href="#i-chip"/></svg></div>
                     <h3>LLM Orchestration</h3>
                     <p>Coordinate multiple AI agents (Windsurf, Cursor, Claude Code, aider, OpenRouter)</p>
                 </div>
@@ -191,27 +219,27 @@ koru auto</code></pre>
             <p class="section-intro">Capabilities shipped in the open-source library — discovery, ticketed execution, IDE automation, verification, and fleet-scale rollout from one CLI.</p>
             <div class="features-grid">
                 <div class="feature-item">
-                    <h3>🔎 Discovery Passes</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-search"/></svg> Discovery Passes</h3>
                     <p>Broad codebase analysis that turns signals into concrete planfile tickets</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🎫 Ticketed Delivery</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-ticket"/></svg> Ticketed Delivery</h3>
                     <p>Planfile-first execution so every change is scoped, auditable, and resumable</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🤖 IDE / Daemon Automation</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-bot"/></svg> IDE / Daemon Automation</h3>
                     <p>Cursor, VS Code, Windsurf, and plugin-driven hands-off refactor loops</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🛡️ Verification & Healing</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-shield"/></svg> Verification & Healing</h3>
                     <p>Post-run checks, runtime probes, and recovery paths that keep regressions visible</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🌍 Multi-Repo Rollout</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-globe"/></svg> Multi-Repo Rollout</h3>
                     <p>One workflow across matching repositories, from local repair to fleet-wide rollout</p>
                 </div>
                 <div class="feature-item">
-                    <h3>📊 Auditing & Traceability</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-chart"/></svg> Auditing & Traceability</h3>
                     <p>JSONL event logs, planfile handoffs, and machine-readable history for every run</p>
                 </div>
             </div>
@@ -222,37 +250,37 @@ koru auto</code></pre>
     <section class="workflow">
         <div class="container">
             <h2>The <span class="notranslate">Koru</span> Loop</h2>
-            <div class="workflow-diagram notranslate">
+            <div class="workflow-diagram notranslate" tabindex="0" role="region" aria-label="Koru workflow loop diagram">
                 <div class="workflow-step">
                     <div class="step-number">1</div>
                     <div class="step-title">DETECT</div>
                     <div class="step-tools">regix, TestQL, redup, Probe</div>
                 </div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
                 <div class="workflow-step">
                     <div class="step-number">2</div>
                     <div class="step-title">PLAN</div>
                     <div class="step-tools">planfile, Prometheus</div>
                 </div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
                 <div class="workflow-step">
                     <div class="step-number">3</div>
                     <div class="step-title">EXECUTE</div>
                     <div class="step-tools">Windsurf, Cursor, OpenRouter</div>
                 </div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
                 <div class="workflow-step">
                     <div class="step-number">4</div>
                     <div class="step-title">VERIFY</div>
                     <div class="step-tools">pytest, TestQL, vallm</div>
                 </div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
                 <div class="workflow-step">
                     <div class="step-number">5</div>
                     <div class="step-title">HEAL</div>
                     <div class="step-tools">Webhook API, retry loops</div>
                 </div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
                 <div class="workflow-step">
                     <div class="step-number">6</div>
                     <div class="step-title">LEARN</div>
@@ -269,39 +297,39 @@ koru auto</code></pre>
             <p class="section-intro">20+ integrated tools for the complete refactor automation pipeline</p>
             <div class="ecosystem-grid notranslate">
                 <div class="tool-card">
-                    <h4>planfile</h4>
+                    <h3>planfile</h3>
                     <p>Ticket backlog & execution gateway</p>
                 </div>
                 <div class="tool-card">
-                    <h4>regix</h4>
+                    <h3>regix</h3>
                     <p>Python regression metrics & tracking</p>
                 </div>
                 <div class="tool-card">
-                    <h4>redup</h4>
+                    <h3>redup</h3>
                     <p>Duplicate detection & deduplication</p>
                 </div>
                 <div class="tool-card">
-                    <h4>testql</h4>
+                    <h3>testql</h3>
                     <p>Declarative HTTP scenario tests</p>
                 </div>
                 <div class="tool-card">
-                    <h4>wup</h4>
+                    <h3>wup</h3>
                     <p>Real-time service dependency health</p>
                 </div>
                 <div class="tool-card">
-                    <h4>vallm</h4>
+                    <h3>vallm</h3>
                     <p>Multi-tier semantic patch validator</p>
                 </div>
                 <div class="tool-card">
-                    <h4>redsl</h4>
+                    <h3>redsl</h3>
                     <p>OpenRouter-powered auto-refactor</p>
                 </div>
                 <div class="tool-card">
-                    <h4>prefact</h4>
+                    <h3>prefact</h3>
                     <p>Proactive LLM-aware linter</p>
                 </div>
                 <div class="tool-card">
-                    <h4>costs</h4>
+                    <h3>costs</h3>
                     <p>Zero-config AI cost per commit</p>
                 </div>
             </div>
@@ -309,6 +337,29 @@ koru auto</code></pre>
     </section>
 
     <!-- Quick Start Section -->
+    <!-- In Action Section: animated shell scenarios -->
+    <section id="in-action" class="in-action">
+        <div class="container">
+            <h2><span class="notranslate">Koru</span> in Action</h2>
+            <p class="section-intro">Real situations, real terminal output. Pick a scenario — the loop drives an external IDE, a vendor CLI, or a headless LLM, and always verifies before it commits.</p>
+            <div class="scenario-tabs notranslate" role="tablist" aria-label="Koru scenarios">
+                <button class="scenario-tab is-active" role="tab" aria-selected="true" aria-controls="scenario-panel" id="tab-headless" data-scenario="headless" tabindex="0"><svg class="svgi" aria-hidden="true"><use href="#i-monitor"/></svg> Headless server</button>
+                <button class="scenario-tab" role="tab" aria-selected="false" aria-controls="scenario-panel" id="tab-ide" data-scenario="ide" tabindex="-1"><svg class="svgi" aria-hidden="true"><use href="#i-puzzle"/></svg> IDE takeover</button>
+                <button class="scenario-tab" role="tab" aria-selected="false" aria-controls="scenario-panel" id="tab-gates" data-scenario="gates" tabindex="-1"><svg class="svgi" aria-hidden="true"><use href="#i-shield"/></svg> Gate → ticket</button>
+                <button class="scenario-tab" role="tab" aria-selected="false" aria-controls="scenario-panel" id="tab-rescue" data-scenario="rescue" tabindex="-1"><svg class="svgi" aria-hidden="true"><use href="#i-bandage"/></svg> Self-healing lanes</button>
+                <button class="scenario-tab" role="tab" aria-selected="false" aria-controls="scenario-panel" id="tab-openrouter" data-scenario="openrouter" tabindex="-1"><svg class="svgi" aria-hidden="true"><use href="#i-swap"/></svg> OpenRouter LLM</button>
+            </div>
+            <div class="code-block code-block--terminal code-block--scenario notranslate" role="tabpanel" id="scenario-panel" aria-labelledby="tab-headless">
+                <div class="code-block__header">
+                    <span class="code-block__label">Terminal</span>
+                    <span class="scenario-status" aria-hidden="true">● live</span>
+                </div>
+                <pre class="scenario-screen"><code id="scenario-output" aria-live="polite" aria-atomic="true"></code><span class="scenario-cursor" aria-hidden="true">▋</span></pre>
+            </div>
+            <p class="scenario-usecase" id="scenario-usecase"></p>
+        </div>
+    </section>
+
     <section id="quickstart" class="quickstart">
         <div class="container">
             <h2>Quick Start</h2>
@@ -389,23 +440,23 @@ koru auto</code></pre>
             <h2>Documentation</h2>
             <div class="docs-grid">
                 <a href="https://github.com/semcod/koru/blob/main/README.md" class="doc-link" target="_blank" rel="noopener">
-                    <h4>README</h4>
+                    <h3>README</h3>
                     <p>Install extras, wizard, and architecture overview</p>
                 </a>
                 <a href="https://github.com/semcod/koru/blob/main/docs/autopilot-quickstart.md" class="doc-link" target="_blank" rel="noopener">
-                    <h4>Autopilot Quickstart</h4>
+                    <h3>Autopilot Quickstart</h3>
                     <p>30-second daemon + plugin setup</p>
                 </a>
                 <a href="https://github.com/semcod/koru/blob/main/docs/agent-guide.md" class="doc-link" target="_blank" rel="noopener">
-                    <h4>Agent Guide</h4>
+                    <h3>Agent Guide</h3>
                     <p>Windsurf/Cursor/Claude Code workflow</p>
                 </a>
                 <a href="https://github.com/semcod/koru/blob/main/docs/cli-examples.md" class="doc-link" target="_blank" rel="noopener">
-                    <h4>CLI Examples</h4>
+                    <h3>CLI Examples</h3>
                     <p>40+ common koru commands</p>
                 </a>
                 <a href="https://github.com/semcod/koru/blob/main/docs/IDE_PROTOCOL.md" class="doc-link" target="_blank" rel="noopener">
-                    <h4>IDE Protocol</h4>
+                    <h3>IDE Protocol</h3>
                     <p>Formal wire contract for IDE integration</p>
                 </a>
             </div>
@@ -435,15 +486,15 @@ koru auto</code></pre>
             </p>
             <div class="oss-grid">
                 <div class="oss-card">
-                    <h3>📦 Package</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-package"/></svg> Package</h3>
                     <p>Base CLI with planfile queue, scan, and autopilot protocol. Optional extras cover API, agent, and dev workflows.</p>
                 </div>
                 <div class="oss-card">
-                    <h3>🧭 First run</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-compass"/></svg> First run</h3>
                     <p>Install from PyPI, then run the closed loop on your repo — workspace setup, scan, and ticket execution in one flow. See <a href="#quickstart">Quick Start</a> for the two-command sequence.</p>
                 </div>
                 <div class="oss-card">
-                    <h3>📚 Source &amp; docs</h3>
+                    <h3><svg class="svgi" aria-hidden="true"><use href="#i-book"/></svg> Source &amp; docs</h3>
                     <p>
                         <a href="https://github.com/semcod/koru/blob/main/README.md" target="_blank" rel="noopener">README</a> ·
                         <a href="https://github.com/semcod/koru/tree/main/docs" target="_blank" rel="noopener">docs/</a> ·
@@ -454,6 +505,8 @@ koru auto</code></pre>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

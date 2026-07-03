@@ -1,6 +1,11 @@
+html {
+    /* Fluid, uniform type scale: one root size drives every rem unit. */
+    font-size: clamp(15px, 0.42vw + 12.5px, 21px);
+}
+
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
     --secondary: #ec4899;
     --background: #0f172a;
     --surface: #1e293b;
@@ -23,7 +28,7 @@
 
 html {
     scroll-padding-top: 72px;
-    font-size: 1.125rem; /* 18px base (was browser default 16px) */
+    font-size: 1rem;
 }
 
 body {
@@ -36,14 +41,14 @@ body {
 }
 
 .container {
-    max-width: 1120px;
+    max-width: min(80rem, 92vw);
     margin: 0 auto;
     padding: 0 clamp(16px, 4vw, 24px);
 }
 
 /* Shared section rhythm */
 section h2 {
-    font-size: clamp(28px, 4vw, 38px);
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     text-align: center;
@@ -57,18 +62,45 @@ section h2 {
     margin-bottom: 40px;
     font-size: 1.0625rem;
     line-height: 1.7;
-    max-width: 640px;
+    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 .section-intro a {
     color: var(--primary);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .section-intro a:hover {
     text-decoration: underline;
+    color: var(--text);
+}
+
+/* Skip-to-content link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 200;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: #0f172a;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+/* Global focus-visible ring */
+a:focus-visible,
+button:focus-visible,
+[role="tab"]:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* Navigation */
@@ -89,7 +121,7 @@ section h2 {
 }
 
 .nav-brand {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--primary);
     flex-shrink: 0;
@@ -106,7 +138,7 @@ section h2 {
 .nav-menu a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.875rem;
     transition: color 0.2s ease;
 }
 
@@ -133,7 +165,7 @@ section h2 {
 
 .lang-select {
     font-family: inherit;
-    font-size: 13px;
+    font-size: 0.812rem;
     color: var(--text-muted);
     background-color: var(--background);
     border: 1px solid var(--border);
@@ -152,7 +184,11 @@ section h2 {
 .lang-select:focus-visible {
     color: var(--text);
     border-color: var(--primary);
-    outline: none;
+}
+
+.lang-select:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* Hide Google Translate banner / default widget chrome */
@@ -189,7 +225,7 @@ body {
 }
 
 .hero-eyebrow {
-    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--success);
@@ -198,7 +234,7 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(40px, 8vw, 56px);
+    font-size: 3.4rem;
     margin-bottom: 12px;
     letter-spacing: -0.03em;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -208,7 +244,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: clamp(20px, 3vw, 26px);
+    font-size: 1.5rem;
     color: var(--text);
     margin-bottom: 16px;
     font-weight: 500;
@@ -219,7 +255,7 @@ body {
     color: var(--text-muted);
     margin: 0 auto 32px;
     line-height: 1.75;
-    max-width: 680px;
+    max-width: 42rem;
 }
 
 .hero-description--after-video {
@@ -236,7 +272,7 @@ body {
 }
 
 .hero-badge {
-    font-size: 12px;
+    font-size: 0.75rem;
     padding: 5px 12px;
     border-radius: 999px;
     background-color: rgba(15, 23, 42, 0.6);
@@ -246,7 +282,7 @@ body {
 
 .hero-commands {
     margin: 0 auto 36px;
-    max-width: 520px;
+    max-width: 33rem;
 }
 
 .code-block--hero-terminal {
@@ -255,11 +291,11 @@ body {
 
 .hero-video {
     margin: 0 auto 36px;
-    max-width: 900px;
+    max-width: 56rem;
 }
 
 .hero-video__title {
-    font-size: clamp(22px, 3vw, 28px);
+    font-size: 1.65rem;
     font-weight: 700;
     color: var(--text);
     margin-bottom: 8px;
@@ -269,7 +305,7 @@ body {
 }
 
 .hero-video__subtitle {
-    font-size: 15px;
+    font-size: 0.938rem;
     color: var(--text-muted);
     margin-bottom: 20px;
 }
@@ -303,7 +339,7 @@ body {
 }
 
 .code-block--terminal {
-    max-width: 520px;
+    max-width: 33rem;
     margin: 0 auto;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
@@ -314,7 +350,7 @@ body {
     justify-content: space-between;
     gap: 12px;
     padding: 8px 12px 8px 16px;
-    font-size: 11px;
+    font-size: 0.688rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -330,7 +366,7 @@ body {
 .code-block__copy {
     flex-shrink: 0;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 0.688rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: none;
@@ -351,7 +387,11 @@ body {
     color: var(--text);
     background-color: rgba(99, 102, 241, 0.12);
     border-color: var(--border);
-    outline: none;
+}
+
+.code-block__copy:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 .code-block__copy:active {
@@ -380,7 +420,7 @@ body {
     padding: 0;
     background: none;
     font-family: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, monospace;
-    font-size: 15px;
+    font-size: 0.938rem;
     line-height: 1.7;
     color: var(--success);
     white-space: pre;
@@ -420,13 +460,13 @@ body {
 .oss-card h3 {
     margin-bottom: 12px;
     color: var(--text);
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .oss-card p {
     color: var(--text-muted);
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 0.938rem;
     line-height: 1.65;
 }
 
@@ -436,7 +476,7 @@ body {
 
 .oss-card a {
     color: var(--primary);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .oss-card a:hover {
@@ -463,7 +503,7 @@ body {
     border-radius: var(--radius-sm);
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 0.938rem;
     transition: all 0.2s ease;
     display: inline-block;
     cursor: pointer;
@@ -472,7 +512,7 @@ body {
 
 .btn-primary {
     background-color: var(--primary);
-    color: white;
+    color: #0f172a;
 }
 
 .btn-primary:hover {
@@ -489,7 +529,7 @@ body {
 
 .btn-secondary:hover {
     background-color: var(--primary);
-    color: white;
+    color: #0f172a;
 }
 
 /* Mission Section */
@@ -503,7 +543,7 @@ body {
     color: var(--text-muted);
     margin-bottom: 40px;
     font-size: 1.0625rem;
-    max-width: 640px;
+    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -528,7 +568,7 @@ body {
 }
 
 .mission-card .icon {
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
@@ -569,7 +609,7 @@ body {
 
 .feature-item h3 {
     margin-bottom: 10px;
-    font-size: 17px;
+    font-size: 1.062rem;
 }
 
 .feature-item p {
@@ -595,6 +635,12 @@ body {
     padding: 30px 0;
 }
 
+.workflow-diagram:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
 .workflow-step {
     background-color: var(--surface);
     padding: 22px 20px;
@@ -605,25 +651,25 @@ body {
 }
 
 .step-number {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--primary);
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .step-title {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .step-tools {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--text-muted);
 }
 
 .workflow-arrow {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--primary);
     flex-shrink: 0;
 }
@@ -653,13 +699,13 @@ body {
     background-color: rgba(51, 65, 85, 0.35);
 }
 
-.tool-card h4 {
+.tool-card h3 {
     margin-bottom: 10px;
     color: var(--primary);
 }
 
 .tool-card p {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--text-muted);
 }
 
@@ -673,7 +719,7 @@ body {
     text-align: center;
     margin-top: 24px;
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 0.938rem;
 }
 
 .quickstart-note a {
@@ -708,7 +754,7 @@ body {
 }
 
 .mode-header {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: var(--secondary);
@@ -744,7 +790,7 @@ body {
 }
 
 .stat-value {
-    font-size: clamp(28px, 4vw, 34px);
+    font-size: 2rem;
     font-weight: 700;
     color: var(--secondary);
     margin-bottom: 8px;
@@ -752,13 +798,13 @@ body {
 }
 
 .stat-label {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .stat-detail {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--text-muted);
 }
 
@@ -794,7 +840,7 @@ body {
     transform: translateY(-3px);
 }
 
-.doc-link h4 {
+.doc-link h3 {
     color: var(--primary);
     margin-bottom: 10px;
 }
@@ -811,23 +857,23 @@ body {
 }
 
 .cta h2 {
-    font-size: clamp(28px, 4vw, 36px);
+    font-size: 2.1rem;
     margin-bottom: 12px;
-    color: white;
+    color: #0f172a;
 }
 
 .cta > .container > p {
     font-size: 1.0625rem;
     margin-bottom: 28px;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 560px;
+    color: #1e293b;
+    max-width: 35rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 .cta > .container > p code {
     font-family: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, monospace;
-    font-size: 15px;
+    font-size: 0.938rem;
     background: rgba(255, 255, 255, 0.15);
     padding: 2px 8px;
     border-radius: 4px;
@@ -835,7 +881,7 @@ body {
 
 .oss-card code {
     font-family: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, monospace;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--success);
 }
 
@@ -847,22 +893,22 @@ body {
 }
 
 .cta .btn-primary {
-    background-color: white;
-    color: var(--primary);
-}
-
-.cta .btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.cta .btn-secondary {
-    border-color: white;
+    background-color: #0f172a;
     color: white;
 }
 
+.cta .btn-primary:hover {
+    background-color: #1e293b;
+}
+
+.cta .btn-secondary {
+    border-color: #0f172a;
+    color: #0f172a;
+}
+
 .cta .btn-secondary:hover {
-    background-color: white;
-    color: var(--primary);
+    background-color: #0f172a;
+    color: white;
 }
 
 /* Footer */
@@ -872,12 +918,12 @@ body {
     padding: 36px 0;
     text-align: center;
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .footer a {
     color: var(--primary);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .footer a:hover {
@@ -896,16 +942,16 @@ body {
 @media (max-width: 768px) {
     .nav-menu {
         gap: 10px 14px;
-        font-size: 13px;
+        font-size: 0.812rem;
     }
 
     .lang-select {
-        font-size: 12px;
+        font-size: 0.75rem;
         max-width: 140px;
     }
 
     .hero-description {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .hero-video {
@@ -941,4 +987,138 @@ body {
         text-align: center;
     }
 
+}
+/* --- Koru in Action: animated shell scenarios --- */
+.in-action {
+    padding: var(--section-pad) 0;
+    background: linear-gradient(180deg, var(--background), var(--surface) 140%);
+}
+
+.in-action h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.scenario-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 28px auto 22px;
+}
+
+.scenario-tab {
+    padding: 9px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.scenario-tab:hover {
+    color: var(--text);
+    border-color: var(--primary);
+}
+
+.scenario-tab.is-active {
+    color: #0f172a;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.code-block--scenario {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.scenario-status {
+    color: #34d399;
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+}
+
+.scenario-screen {
+    min-height: 236px;
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.scenario-screen .sc-cmd { color: var(--text); font-weight: 600; }
+.scenario-screen .sc-out { color: var(--text-muted); }
+.scenario-screen .sc-ok  { color: var(--success); }
+.scenario-screen .sc-err { color: var(--warning); }
+
+.scenario-cursor {
+    display: inline-block;
+    color: var(--primary);
+    animation: scenario-blink 1s steps(1) infinite;
+}
+
+@keyframes scenario-blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scenario-cursor { animation: none; }
+}
+
+.scenario-usecase {
+    max-width: 760px;
+    margin: 18px auto 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    min-height: 3.2em;
+}
+
+@media (max-width: 640px) {
+    .scenario-screen { min-height: 280px; font-size: 0.78rem; }
+}
+
+/* --- Inline SVG icons (consistent cross-platform rendering) --- */
+.svgi {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: -0.18em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.svgi--brand { color: var(--primary); width: 1.25em; height: 1.25em; }
+.svgi--hero { color: var(--primary); width: 0.95em; height: 0.95em; vertical-align: -0.08em; }
+.svgi--card { width: 2rem; height: 2rem; color: var(--primary); }
+.mission-card .icon { line-height: 1; }
+.feature-item h3 .svgi, .scenario-tab .svgi { color: var(--primary); margin-right: 2px; }
+.scenario-tab.is-active .svgi { color: #0f172a; }
+
+/* Fluid sizing for the In Action section — scales with the screen */
+.code-block--scenario {
+    max-width: min(60rem, 94vw);
+}
+
+.scenario-screen {
+    font-size: 0.95rem;
+    min-height: 15em;
+}
+
+.scenario-usecase {
+    max-width: min(60rem, 94vw);
+    font-size: 1rem;
+}
+
+.scenario-tab {
+    font-size: 0.9rem;
 }

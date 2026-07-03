@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **"Koru in Action" section** — five animated terminal scenarios (headless
+  server, IDE takeover, gate→ticket, self-healing lanes, OpenRouter LLM) with
+  per-scenario use-case notes; typewriter engine honors
+  `prefers-reduced-motion` and starts on scroll-into-view.
+- Nav links: In Action section and https://docs.coru.dev.
+
+### Changed
+- **All emoji/Unicode icons replaced with an inline SVG sprite** (20 stroke
+  icons on `currentColor`) — identical rendering on every platform; drawn
+  spiral favicon.
+- **Fluid uniform type scale** — one vw-driven root `font-size` drives every
+  rem unit (zero px font sizes left); containers widened to
+  `min(80rem, 92vw)` so the layout stretches with the screen.
+
 ## [0.0.5] - 2026-06-02
 
 ### Docs
