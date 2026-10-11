@@ -1,0 +1,166 @@
+# testql-scenarios.yaml — behavioural HTTP probes for coru.dev (TOON YAML)
+# Bootstrapped via `task template:install:testql` (see koru) or by following
+# workflows/on-change-gates.md. testql reads these scenarios; it never mutates
+# project files.
+#
+# Default target is the deployed GitHub Pages site. Override per run to probe
+# a local checkout before pushing to main:
+#   TESTQL_BASE_URL=http://localhost:8000 task testql:run  # python -m http.server 8000
+
+schema: toon/1
+name: coru-dev-site-probes
+description: >
+  Behavioural contract for the Koru marketing site: landing page content,
+  i18n scaffolding, static assets, apex-to-www redirect, and the optional
+  hero video fallback.
+
+defaults:
+  base_url: https://www.coru.dev
+  base_url_env: TESTQL_BASE_URL
+  follow_redirects: false
+  timeout_ms: 15000
+  retries: 2
+  backoff_ms: 500
+  headers:
+    User-Agent: testql-probe/1.0 (+https://github.com/coru-agent/coru-dev)
+    Accept: text/html,application/xhtml+xml
+
+scenarios:
+  - id: landing-page-contract
+    description: Hero page serves HTML and advertises the OSS library.
+    request:
+      method: GET
+      path: /
+    expect:
+      status: 200
+      headers:
+        Content-Type: text/html
+      body:
+        contains_all:
+          - Koru
+          - pip install koru
+          - github.com/semcod/koru
+          - www.coru.dev
+        contains_none:
+          - TODO(hero)
+
+  - id: i18n-scaffolding
+    description: Google Translate scaffolding, lang attribute, and protected strings.
+    request:
+      method: GET
+      path: /
+    expect:
+      status: 200
+      body:
+        contains_all:
+          - lang="en"
+          - id="google_translate_element"
+          - id="lang-select"
+          - class="notranslate"
+
+  - id: styles-asset
+    description: Dark-theme stylesheet is published and parseable.
+    request:
+      method: GET
+      path: /styles.css
+    expect:
+      status: 200
+      headers:
+        Content-Type: text/css
+      body:
+        contains_all:
+          - gradient
+
+  - id: script-asset
+    description: Locale detection and translate switcher logic are published.
+    request:
+      method: GET
+      path: /script.js
+    expect:
+      status: 200
+      body:
+        contains_all:
+          - googtrans
+          - coru-lang
+
+  - id: asset-cache-headers
+    description: Static assets ship with a sane cache-control window.
+    request:
+      method: GET
+      path: /styles.css
+    expect:
+      status: 200
+      headers:
+        Cache-Control: contains max-age
+
+  - id: apex-redirects-to-www
+    description: CNAME apex permanently redirects to www.coru.dev.
+    overrides:
+      base_url: https://coru.dev
+    request:
+      method: GET
+      path: /
+    expect:
+      status:
+        - 301
+        - 308
+      headers:
+        Location: starts_with https://www.coru.dev
+
+  - id: hero-video-fallback
+    description: Until video/demo.mp4 ships, the hero references the upstream fallback.
+    request:
+      method: GET
+      path: /
+    expect:
+      status: 200
+      body:
+        contains_any:
+          - video/demo.mp4
+          - github.com/semcod/koru/raw/main/koru.mp4
+
+  - id: hero-video-absent-is-404
+    description: Missing optional asset answers 404 without redirect loops.
+    severity: warn
+    request:
+      method: GET
+      path: /video/demo.mp4
+    expect:
+      status: 404
+
+  - id: unknown-path-is-404
+    description: Unknown paths get the GitHub Pages 404 page, not a soft index.
+    request:
+      method: GET
+      path: /definitely-not-a-page
+    expect:
+      status: 404
+
+gates:
+  on_change:
+    - paths:
+        - index.html
+      scenarios:
+        - landing-page-contract
+        - i18n-scaffolding
+        - hero-video-fallback
+    - paths:
+        - styles.css
+      scenarios:
+        - styles-asset
+        - asset-cache-headers
+    - paths:
+        - script.js
+      scenarios:
+        - script-asset
+    - paths:
+        - CNAME
+      scenarios:
+        - apex-redirects-to-www
+  default: all
+  report:
+    format: toon
+    fail_on:
+      - error
+    warn_on:
+      - warn
