@@ -1,0 +1,27 @@
+# wup.yaml — intelligent file watcher (schema 1.0)
+# 3-layer on-change gates: detect → quick → full
+
+schema: "1.0"
+project: local
+description: >
+  Intelligent file watcher configuration (3-layer: detect → quick → full).
+
+layers:
+  detect:
+    description: Change detection and file pattern filtering.
+    watch:
+      - "**/*"
+    ignore:
+      - ".git/**"
+      - ".idea/**"
+      - ".planfile/**"
+      - "video/**"
+    debounce_ms: 300
+  quick:
+    description: Fast local quality gates on change.
+    commands:
+      - task quality:regix:local
+  full:
+    description: Comprehensive verification gates.
+    commands:
+      - task quality:regix:local
