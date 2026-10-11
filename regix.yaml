@@ -1,0 +1,79 @@
+# regix.yaml — regression metrics gate (CC / MI / coverage delta)
+# Bootstrapped via `task template:install:regix` (see workflows/on-change-gates.md).
+# regix reads this file; it never auto-runs shell steps — wire it into
+# `task quality:regix:local` (koru.yaml: when.ticket_iteration / before_complete_ticket).
+#
+# This repo is a static site today; the Python scope stays empty until the first
+# .py file lands. Budgets apply per change against the committed baseline.
+
+schema: "1.0"
+project: local
+description: >
+  Per-change regression gate: cyclomatic complexity (CC), maintainability index
+  (MI), and coverage delta versus the committed baseline. Exits non-zero when a
+  change exceeds its regression budget, blocking `planfile ticket done`.
+
+baseline:
+  path: .regix/baseline.json
+  compare_ref: HEAD
+  update_policy: manual
+  update_command: regix baseline update --project .
+
+paths:
+  include:
+    - "**/*.py"
+  exclude:
+    - ".git/**"
+    - ".idea/**"
+    - ".planfile/**"
+    - ".regix/**"
+    - "video/**"
+    - "docs/**"
+
+metrics:
+  cyclomatic_complexity:
+    id: cc
+    tool: radon
+    collect: radon cc --total-average --json .
+    aggregate: average
+    budget:
+      max_average: 6.0
+      max_block: 10
+      max_regression_average: 0.5
+
+  maintainability_index:
+    id: mi
+    tool: radon
+    collect: radon mi --json .
+    aggregate: average
+    budget:
+      min_average: 70.0
+      max_regression_average: 2.0
+
+  coverage:
+    id: coverage
+    tool: coverage.py
+    collect: coverage json -o .regix/coverage.json
+    metric: totals.percent_covered
+    budget:
+      min_percent: 80.0
+      max_regression_percent: 1.0
+
+gates:
+  on_change:
+    - metric: cc
+      fail_when: regression_beyond_budget
+    - metric: mi
+      fail_when: regression_beyond_budget
+    - metric: coverage
+      fail_when: regression_beyond_budget
+
+reporting:
+  format: summary
+  artifact: .regix/regix-report.json
+
+environment:
+  # Optional overrides (commented defaults):
+  # REGIX_BASELINE_PATH: .regix/baseline.json
+  # REGIX_COMPARE_REF: HEAD
+  # REGIX_STRICT: "0"
